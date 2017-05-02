@@ -13,7 +13,7 @@ var conf = require('./config/api')
 
 // 设置监听端口
 app.set('port',conf.node_port || 3000)
-app.set('views',__dirname + "/views")
+app.set('views',__dirname + "/views/page")
 
 // 模版引擎 这里指定默认文件后缀，如果不是html需要指定具体后缀
 // app.set('view engine','html')
@@ -31,8 +31,8 @@ app.use(express.static(path.join(__dirname,'/views')));
 http.createServer(app).listen(app.get('port'),function(){    
       console.log('server started, listen port : ' + app.get('port'));
 }); 
-
 // 路由
+
 router(app)
 
 //加载错误处理解决办法
