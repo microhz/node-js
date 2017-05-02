@@ -1,0 +1,120 @@
+/*login css*/
+body{
+	background-color: #f5f5f5;
+}
+.header{
+	position: relative;
+}
+
+
+/*content部分*/
+.content{
+	width:1280px;
+	height:86%;
+	overflow:hidden;
+	margin:0 auto;
+	min-height: 500px;
+	position: relative;
+}
+
+.login-box{
+	width: 748px;
+	height: 508px;
+	overflow: hidden;
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/loginbg2.png) no-repeat;
+	margin-top: 155px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -254px;
+	margin-left: -374px;
+}
+.login-box .login-title{
+	height: 20px;
+	font-size: 20px;
+	color: #35CBDB;
+	text-align: center;
+	font-weight: 600;
+	margin: 90px 0 30px 0;
+}
+.input-box .login-phone,.input-box .login-pwd{
+	width: 280px;
+	height: 47px;
+	/*line-height: 47px;*/
+	border: none;
+	border-bottom: 1px solid #DBDFED;
+	padding: 0 10px;
+	font-size: 14px;
+}
+.input-box .login-pwd{
+	margin-top: 1px;
+	border-radius: 0px 0px 5px 5px;
+}
+.input-box .login-phone{
+	border-radius: 5px 5px 0 0;
+}
+.input-box{
+	width: 300px;
+	height: 96px;
+	border: 1px solid #DBDFED;
+	margin-left: 219px;
+	border-radius: 5px;
+	position: relative;
+}
+
+.login-box .forgetPwd{
+	width: 300px;
+	margin: 16px auto;
+	text-align: right;
+}
+.login-box .forgetPwd a{
+	font-size: 14px;
+	color: #71b1ea;
+	text-decoration: none;
+	font-weight: 600;
+}
+.login-box button{
+	width: 300px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	margin-left: 219px;
+	margin-bottom: 20px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	cursor: pointer;
+	/*font-weight: 600;*/
+}
+.login-box .login-btn{
+	background-color: #35CBDB;
+	color: #fff;
+}
+.login-box .regist-btn{
+	background-color: #fff;
+	color: #86888e;
+	border: 1px solid #DBDFED;
+}
+
+/*提示信息部分*/
+.error-phone,.error-pwd{
+	position: absolute;
+    top: 16px;
+    right: -112px;
+    color: #f65c6b;
+    font-size: 12px;
+    width: 100px;
+}
+.error-pwd{
+	top: 64px;
+}
+/*footer*/
+.footer{
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	margin-left: -262.5px;
+}
+
