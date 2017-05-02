@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>家有学霸--超人气名师在线辅导平台</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Language" content="zh-CN">
+		<meta name="title" content="家有学霸--超人气名师在线辅导平台-首页">
+		<meta name="keywords" content="家有学霸,真人辅导,在线辅导, 免费,一对一,在线课堂,作业辅导">
+		<meta name="description" content="“家有学霸”代表一种全新的学习方式，是一款真人1对1在线学习辅导软件，它支持老师用手机给学生上课，类似于一个超级中小学在线课堂，学生可以通过手机找到家有学霸上的老师对自己进行1对1线上辅导。老师通过家有学霸给学生上课，可以极大地提高上课的效率，更好地保证学生的学习效果。">
+		<link rel="stylesheet" type="text/css" href="http://www.jiayouxueba.com/static/css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<!--<link rel="stylesheet" href="css/sweetalert.css" />-->
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<!--百度统计-->
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "https://hm.baidu.com/hm.js?0137a4763f9d593f06903822f79f2a64";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header" id="header">
+				<div class="head-box">
+					<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/logo.png" class="logo"/>
+					<a href="teacher.html" class="ruzhu" target="_blank">教师入口</a>
+					<a href="javascript:void(0)" class="stu-login"><span class="denglu">登录</span>&nbsp; | &nbsp;<span class="zhuce">注册</span></a>
+					<a href="javascript:void(0)" class="stu-logined"><span></span>&nbsp; | &nbsp;<em class="tuichu">退出</em></a>
+					<ul class="nav">
+						<li class="current"><a href="javascript:void(0)">找老师</a></li>
+						<li><a href="class.html" target="_blank">如何上课</a></li>
+						<li><a href="function.html" target="_blank">功能介绍</a></li>
+						<li><a href="computer.html" target="_blank">电脑端下载</a></li>
+						<li><a href="mobile.html" target="_blank">手机端下载</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="banner">
+				<div class="swiper-container bannerCon">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide banslideone"></div>
+			            <div class="swiper-slide banslidetwo"></div>
+			            <div class="swiper-slide banslidethree"></div>
+			        </div>
+			    </div>
+			</div>
+			<a href="#" name="find-teacher" class="findTea"></a>
+			<div class="contentBox">
+				<div class="order-con">
+					<div class="ocon-title">
+						<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/oconTitle.png"/>
+					</div>
+					<div class="midcon-form">
+						<div class="stuName">
+							<p>学生姓名：</p>
+							<input type="text" class="stu-name" placeholder="请输入学生姓名"/>
+							<span class="error-name"></span>
+						</div>
+						<div class="stuProvince">
+							<p>所在省份：</p>
+							<select name="" id="province" class="selected">
+							</select>
+						</div>
+						<div class="stuGrade">
+							<p>年级：</p>
+							<select name="" id="grade" class="selected">
+							</select>
+						</div>
+						<div class="stuSubject">
+							<p>科目：</p>
+							<select name="" id="subject" class="selected">
+							</select>
+						</div>
+						<div class="stuSex">
+							<p>性别选择：</p>
+							<input type="radio" id="man" value="0" name="sex" class="sex"/>
+							<label for="man" class="sex nan">我是男生</label>
+							<input type="radio" id="woman" value="1" name="sex" class="sex"/>
+							<label for="woman" class="sex">我是女生</label>
+							<span class="error-sex"></span>
+						</div>
+						<div class="stuTime">
+							<p class="coachStatus">辅导性质：</p>
+							<input type="radio" id="long" value="981" name="time" class="time"/>
+							<input type="radio" id="short" value="980" name="time" class="time"/>
+							<span class="error-time"></span>
+						</div>
+						<div class="stuRemark">
+							<p>需求备注(非必填):</p>
+							<textarea name="" rows="2" cols="25" class="remark" id="remark" placeholder="你可以简单注明对老师的其他要求（最多填写50个字）"></textarea>
+							<p class="textInfo"></p>
+						</div>
+						<button class="search-teacher" id="free-search">免费找老师</button>
+					</div>
+				</div>
+				<div class="overviewTitle">
+					<h2><img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/overview-h2.png" alt="" /></h2>
+					<h3>小学、初中、高中，<span>近万在职名师</span>随时待命，总有一款适合你</h3>
+				</div>
+				<div class="overviewPercentage">
+					<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/percentage.png" alt="" />
+					<h2>只需线下辅导<span>1/3的价格，</span>就能找到各种<span>在职名师，</span>帮助孩子<span>解决所有学习难题</span></h2>
+				</div>
+				<div class="overviewCon">
+					<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/overviewCon.png" alt="" />
+				</div>
+				<a class="freeFind" href="#find-teacher">免费找老师</a>
+			</div>
+			<div class="advantage">
+				<div class="advanBox">
+					<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/advText.png"/>
+				</div>
+			</div>
+			<div class="adv-con">
+				<div class="adv-one adv">
+					<div class="adv-introCon">
+						<p class="adv-intro firstadv">家长直接对接老师</p>
+						<p class="adv-intro">省去中间环节</p>
+						<p class="adv-intro">辅导价格只有机构的1/3</p>
+					</div>
+				</div>
+				<div class="adv-two adv">
+					<div class="adv-introCon">
+						<p class="adv-intro firstadv">三重审核，严格筛选在线老师</p>
+						<p class="adv-intro">总数超过5000人保证</p>
+						<p class="adv-intro">每一位老师，都货真价实</p>
+					</div>
+				</div>
+				<div class="adv-three adv">
+					<div class="adv-introCon">
+						<p class="adv-intro firstadv">3+X全息互动技术视频、</p>
+						<p class="adv-intro">聊天、写板书、改错题、</p>
+						<p class="adv-intro">布置作业、放PPT</p>
+					</div>
+				</div>
+				<div class="adv-four adv">
+					<div class="adv-introCon">
+						<p class="adv-intro firstadv">自动收录课堂笔记</p>
+						<p class="adv-intro">免费课程回放</p>
+						<p class="adv-intro">不懂的内容重复听</p>
+					</div>
+				</div>
+				<div class="adv-five adv">
+					<div class="adv-introCon">
+						<p class="adv-intro firstadv">全国各地名师随便挑，</p>
+						<p class="adv-intro">对老师不满意随时换</p>
+						<p class="adv-intro">分分钟找到最适合的好老师</p>
+					</div>
+				</div>
+				<div class="adv-six adv">
+					<div class="adv-introCon">
+						<p class="adv-intro firstadv">上一分钟课，扣一分钟钱</p>
+						<p class="adv-intro">人性化的计费方式</p>
+						<p class="adv-intro">实际辅导价格再降一半</p>
+					</div>
+				</div>
+				<a class="freeFind adv-freeFind" href="#find-teacher">免费找老师</a>
+			</div>
+			<div class="oTo">
+				<div class="oTo-item item-one">
+					<h2>不用浪费时间在路上</h2>
+					<p class="oFP"><span></span>&nbsp;坐在家里，也能找到</p>
+					<p class="oP">全国各地的好老师</p>
+					<p class="oP">贴心辅导</p>
+				</div>
+				<div class="oTo-item  item-Two">
+					<h2>上课时间自由定</h2>
+					<p class="oFP"><span></span>&nbsp;不懂的知识点，24小时</p>
+					<p>随时找老师解答，</p>
+					<p>功课不再被耽误</p>
+				</div>
+				<div class="oTo-item item-Three">
+					<h2>不用接，不用送</h2>
+					<p class="oFP"><span></span>&nbsp;学习从此靠自己，</p>
+					<p class="oP">老师自己挑</p>
+					<p class="oP">不满意随时换</p>
+				</div>
+				<div class="oTo-item  item-Four">
+					<h2>私人订制</h2>
+					<p class="oFP"><span></span>&nbsp;个性化满足孩子的</p>
+					<p>学习要求</p>
+				</div>
+			</div>
+			<div class="flow">
+				<div class="flow-con">
+					<h2><img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/flowTitle-one.png"/></h2>
+					<h3>注册之后，一学就会</h3>
+					<div class="flow-item">
+						<div class="flowItem-list">
+							<div class="icon">
+								<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/phone.png" alt="" />
+							</div>
+							<p>免费</p>
+							<p>注册咨询</p>
+						</div>
+					</div>
+					<div class="space">
+						<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/space.png" alt="" />
+					</div>
+					<div class="flow-item">
+						<div class="flowItem-list">
+							<div class="icon">
+								<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/listen.png" alt="" />
+							</div>
+							<p>免费</p>
+							<p>预约试听课</p>
+						</div>
+					</div>
+					<div class="space">
+						<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/space.png" alt="" />
+					</div>
+					<div class="flow-item">
+						<div class="flowItem-list">
+							<div class="icon">
+								<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/guide.png" alt="" />
+							</div>
+							<p>免费</p>
+							<p>发单找老师</p>
+						</div>
+					</div>
+					<div class="space">
+						<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/space.png" alt="" />
+					</div>
+					<div class="flow-item">
+						<div class="flowItem-list">
+							<div class="icon">
+								<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/book.png" alt="" />
+							</div>
+							<p>免费</p>
+							<p>学习能力测评</p>
+						</div>
+					</div>
+					<div class="change">
+						<span><img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/change.png"/></span>&nbsp;&nbsp;<em>课程不满意，还能免费换</em>
+					</div>
+				</div>
+			</div>
+			<div class="method">
+				<div class="trust">
+					<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/trust.png"/>
+				</div>
+				<div class="computer">
+					<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/ipad.png"/>
+				</div>
+				<a class="freeFind com-freeFind" href="#find-teacher">免费找老师</a>
+			</div>
+			<!--投资人轮播图-->
+			<div class="swiper-container">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide swislideone"></div>
+		            <div class="swiper-slide swislidetwo"></div>
+		            <div class="swiper-slide swislidethree"></div>
+		        </div>
+		        <!-- Add Pagination -->
+		        <div class="swiper-pagination"></div>
+		    </div>
+		    <!--三大承诺-->
+			<div class="promise"></div>
+			<!--媒体报道-->
+			<div class="media"></div>
+			<div class="Indexfooter">
+				<p class="firstP">Copyright2016-2017&nbsp;杭州小余小余教育科技有限公司&nbsp;版权所有&nbsp;浙ICP备15033366号</p>
+				<p>地址：浙江省杭州市西湖区萍水西街80号优盘时代1号楼13B&nbsp;电话：4006772112</p>
+			</div>
+		</div>
+		
+		<!--输入手机号弹出框-->
+		<div id="hint" class="hintShadow">
+			<div class="hintCon">
+				<p class="oneTitle">请先输入手机号码</p>
+				<p>才能和老师免费沟通辅导哦</p>
+				<input type="text" tabindex="3" placeholder="请输入您的手机号" class="hintMobile">
+				<span class="reminder"></span>
+				<button id="next" disabled="disabled">下一步</buttom>
+				<div class="hintClose">
+					<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web/close.png">
+				</div>
+			</div>
+			<div class="registCon">
+				<h3>家有学霸用户注册</h3>
+				<div class="regForm">
+					<div class="regUser">15978664566</div>
+					<input type="text" class="regInput" placeholder="请输入手机验证码">
+					<span class="codeinfor"></span>
+					<button class="verif">获取验证码</button>
+					<input type="password" placeholder="请设置密码" class="setPwd">
+					<span class="pwdinfor"></span>
+				</div>
+				<button id="sure" class="regSure">确&nbsp;&nbsp;&nbsp;定</button>
+				<div class="hintClose">
+					<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web/close.png">
+				</div>
+				<div class="regBack">返回</div>
+			</div>
+			<div class="logCon">
+				<h3>家有学霸用户登录</h3>
+				<div class="logForm">
+					<div class="logUser">15978664566</div>
+					<input type="password" placeholder="请输入密码" class="logPwd">
+					<span class="lpwdinfor"></span>
+				</div>
+				<p class="forgPwd">忘记密码？</p>
+				<button id="sure" class="logSure">确&nbsp;&nbsp;&nbsp;定</button>
+				<div class="hintClose">
+					<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web/close.png">
+				</div>
+				<div class="regBack">返回</div>
+			</div>
+		</div>
+		
+		<!--电话咨询-->
+		<div class="counseling">
+			<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web/counseling2.png"/>
+			<div class="mobilePhone">
+				<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/web/mobilePhone2.png" />
+				<div class="closePhone"></div>
+			</div>
+		</div>
+		
+		<!--云信接口-->
+		<script type="text/javascript" src="js/yx/util.js"></script>
+		
+		<script type="text/javascript" src="http://www.jiayouxueba.com/static/js/jquery.js" disabled="disabled"></script>
+		<!--<script type="text/javascript" src="js/sweetalert.min.js"></script>-->
+		<script type="text/javascript" src="js/index.js"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var swiper = new Swiper('.swiper-container', {
+		        pagination: '.swiper-pagination',
+		        paginationClickable: true,
+		        loop:true,
+		        autoplay:4000
+		    });
+			
+			var userInfor = JSON.parse(localStorage.getItem("user"));
+			if(userInfor == null){
+				(function(a,h,c,b,f,g){a["UdeskApiObject"]=f;a[f]=a[f]||function(){(a[f].d=a[f].d||[]).push(arguments)};g=h.createElement(c);g.async=1;g.src=b;c=h.getElementsByTagName(c)[0];c.parentNode.insertBefore(g,c)})(window,document,"script","http://assets-cli.udesk.cn/im_client/js/udeskApi.js?1486721852639","ud");
+				ud({
+				    "code": "1aajh57f",
+				    "link": "http://jiayouxueba.udesk.cn/im_client?web_plugin_id=23455"
+				});
+			}else{
+				var c_name = userInfor.userName;
+				var web_token = userInfor.userId;
+				var c_phone = userInfor.mobile;
+				$.ajax({
+					type:"get",
+					url:"/website/sign/getSign?",
+					data:{"web_token": web_token},
+					success:function(data){
+						data = JSON.parse(data);
+						var params = {
+						    "code": "1aajh57f",
+						    "link": "http://jiayouxueba.udesk.cn/im_client?web_plugin_id=23455",
+						    "customer":{
+						    	 "nonce":data.nonce,
+						    	 "timestamp":data.timestamp,
+						    	 "c_name": c_name,
+						    	 "web_token": web_token,
+						    	 "c_tags": "学生",
+						    	 "signature":data.signature,
+						    	 "c_phone":c_phone
+						    }
+						};
+						(function(a,h,c,b,f,g){a["UdeskApiObject"]=f;a[f]=a[f]||function(){(a[f].d=a[f].d||[]).push(arguments)};g=h.createElement(c);g.async=1;g.src=b;c=h.getElementsByTagName(c)[0];c.parentNode.insertBefore(g,c)})(window,document,"script","http://jiayouxueba.udesk.cn/im_client/js/udeskApi.js?1484287526050","ud");
+						ud(params);
+					}
+				});
+			}
+			
+			$(".counseling").click(function(){
+				$(".mobilePhone").css("display","block");
+			})
+			$(".closePhone").click(function(){
+				$(".mobilePhone").css("display","none");
+				return false;
+			})
+		</script>
+		<!--流量统计-->
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cspan id='cnzz_stat_icon_1261190500'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261190500' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</body>
+</html>

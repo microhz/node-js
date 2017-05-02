@@ -1,0 +1,885 @@
+body{
+	background-color: #fff;
+	font-family: 'PingFang SC','STHeitiSC-Light','Helvetica-Light',arial,sans-serif;
+	/*font-family: "微软雅黑";*/
+}
+
+.header{
+	position: relative;
+}
+
+.header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgba(255,255,255,0.88);
+	z-index: 111;
+}
+/*banner*/
+.banner{
+	min-width: 1350px;
+	height: 610px;
+	/*background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/banner1.png) no-repeat center top;*/
+	overflow: hidden;
+}
+.banner .bannerCon{
+	min-width: 1350px;
+    height: 610px;
+    margin: 0 auto;
+}
+.banner .banslideone{
+	background: url("http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/banner1.png") no-repeat center center;
+}
+.banner .banslidetwo{
+	background: url("http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/banner2.png") no-repeat center center;
+}
+.banner .banslidethree{
+	background: url("http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/banner3.png") no-repeat center center;
+}
+/**content部分**/
+
+.contentBox{
+	width: 1280px;
+	height: 1500px;
+	position:relative;
+	margin:0 auto;
+}
+.order-con{
+	width: 1100px;
+	height: 399px;
+	margin: 0 auto;
+	background: url("http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/orderBg.png") no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+	top: -192px;
+	z-index: 11;
+}
+.ocon-title{
+	text-align: center;
+	padding-top: 58px;
+}
+.midcon-form{
+	width: 1046px;
+	height: 280px;
+	margin: 0 auto;
+	margin-top: 28px;
+}
+.midcon-title {
+	width:331px;
+	height:19px;
+	margin:0 auto;
+	margin-top:33px;
+}
+.stuName,.stuProvince,.stuGrade,.stuSubject,.stuSex,.stuTime,.stuRemark{
+	display: inline-block;
+	vertical-align: top;
+	width: 195px;
+	position: relative;
+}
+.stuSex,.stuTime{
+	width: 205px;
+}
+.stuName,.stuSex,.stuRemark{
+	margin-left: 22px;
+}
+.stuTime{
+	margin-left: 58px;
+}
+.stuProvince,.stuSubject,.stuGrade{
+	margin-left: 68px;
+}
+.stuRemark{
+	width: 444px;
+	margin-left: 58px;
+	position: relative;
+}
+.midcon-form p {
+	font-size:14px;
+	color:#666666;
+	height:50px;
+	line-height:50px;
+	font-family: "微软雅黑";
+}
+.midcon-form .stu-name {
+	width:169px;
+	height:35px;
+	line-height:35px;
+	border-radius:5px;
+	border:none;
+	outline:none;
+	border:1px solid #cad0e5;
+	padding:0 12px;
+}
+.midcon-form .selected {
+	width:195px;
+	height:37px;
+	line-height:36px;
+	border-radius:5px;
+	border:none;
+	outline:none;
+	border:1px solid #cad0e5;
+	padding:0 12px;
+	/*很关键：将默认的select选择框样式清除*/
+  	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	/*在选择框的最右侧中间显示小箭头图片*/
+  	background:url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/down_arrow.png) no-repeat scroll right 12px center transparent;
+}
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand {
+	display:none;
+}
+
+.midcon-form .sex,.midcon-form .time {
+	background-color:#fff;
+	width:15px;
+	height:15px;
+	margin-right: 18px;
+}
+.midcon-form label {
+	font-size:14px;
+	vertical-align:top;
+	color:#4a4d55;
+}
+
+.midcon-form .remark {
+	width:444px;
+	height:36px;
+	border:none;
+	outline:none;
+	border-radius:5px;
+	border:1px solid #cad0e5;
+	resize:none;
+	padding:10px;
+	font-size:13px;
+	letter-spacing:0.5px;
+	line-height:22px;
+	font-family: "微软雅黑";
+}
+.midcon-form .textInfo{
+	position: absolute;
+    right: 200px;
+    top: 0px;
+}
+.midcon-form .search-teacher {
+	display: block;
+	border:none;
+	outline: none;
+	width:412px;
+	height:48px;
+	color:#fff;
+	background:#35CBDB;
+	text-align:center;
+	text-decoration:none;
+	font-size:20px;
+	margin: 0 auto;
+	margin-top: 15px;
+	padding: 0;
+	border-radius: 6px;
+	font-weight: normal;
+	cursor: pointer;
+}
+
+.midcon-form .error-name,.midcon-form .error-sex,.midcon-form .error-time{
+	display: block;
+	width: 200px;
+	position: absolute;
+	color: #F65C6B;
+	top: 42px;
+	right: 10px;
+	font-size: 12px;
+}
+
+.midcon-form .error-name{
+	left: 72px;
+    top: 17px;
+}
+.midcon-form .error-sex{
+	top: 17px;
+    left: 72px;
+}
+.midcon-form .error-time{
+	top: 17px;
+    left: 72px;
+}
+
+.midcon-form .selected option span{
+	display: none;
+}
+
+
+
+
+
+
+
+/*更改单选按钮的样式*/
+
+/*更改性别的单选按钮样式*/
+input[type='radio'].sex {
+	display:none;
+	height:20px;
+}
+label.sex:hover{
+	background:url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/radio_hover.png) no-repeat left center;
+	height:20px;
+	padding-left:25px;
+}
+
+label.sex {
+	background:url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/radio_normal.png) no-repeat left center;
+	height:20px;
+	padding-left:25px;
+}
+
+input[type='radio'].sex:checked + .sex {
+	background:url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/radio_check.png) no-repeat left center;
+}
+
+/*更改辅导性质的单选按钮样式*/
+input[type='radio'].time {
+	display:none;
+	height:20px;
+}
+label.time:hover{
+	background:url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/radio_hover.png) no-repeat left center;
+	height:20px;
+	padding-left:25px;
+}
+
+label.time {
+	background:url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/radio_normal.png) no-repeat left center;
+	height:20px;
+	padding-left:25px;
+}
+
+input[type='radio'].time:checked + .time {
+	background:url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/radio_check.png) no-repeat left center;
+}
+
+
+/*登录界面*/
+.login{
+	height: 95px;
+	margin-bottom: 15px;
+}
+.forgetPwd{
+	color: #5aa4e7;
+	font-size: 14px;
+	float: right;
+	cursor: pointer;
+	margin-right: 210px;
+}
+#log-sure{
+	top:200px;
+}
+.log-pwdinfor{
+	position: absolute;
+    top: 65px;
+    right: -113px;
+    font-size: 12px;
+    width: 100px;
+    text-align: left;
+}
+
+
+/*提示框*/
+.tishi{
+	width: 488px !important;
+	height: 168px !important;
+	margin-top: -160px !important;
+	margin-left: -269px !important;
+	padding: 0px 30px;
+}
+
+.tishi .canceltitle{
+	font-size:18px ;
+	color: #62656C;
+	width: 100%;
+	text-align: left;
+	height: 35px;
+	line-height: 30px;
+	font-family: "微软雅黑";
+	border-bottom: 1px solid #CAD0E5;
+}
+.tishi .cancelinfor{
+	font-size: 16px;
+	width: 100%;
+	text-align: left;
+	height: 30px;
+	margin-top: 23px;
+	margin-bottom: 23px;
+	color: #62656C;
+	font-family: "微软雅黑";
+}
+.tishi .cancelbtn{
+	display: block;
+	width: 96px;
+	height: 32px;
+	line-height: 32px;
+	float: right;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	border-radius: 5px;
+	border: 1px solid #CAD0E5;
+	color: #999B9E;
+	cursor: pointer;
+}
+.tishi .cancelbtn:hover{
+	background-color: #35CBDB;
+	color: #fff;
+	border: 1px solid #35CBDB;
+}
+
+/*overview*/
+.overviewTitle{
+	width: 100%;
+	text-align: center;
+	position: relative;
+	top: -112px;
+}
+.overviewTitle h3{
+	font-size: 28px;
+	color: #999999;
+	margin-top: 10px;
+}
+.overviewTitle h3 span{
+	color: #666666;
+}
+.overviewPercentage{
+	text-align: center;
+	position: relative;
+	top: -42px;
+}
+.overviewPercentage h2{
+	height: 30px;
+	line-height: 30px;
+	font-size: 24px;
+	color: #999999;
+	margin-top: 40px;
+}
+.overviewPercentage h2 span{
+	font-size: 30px;
+	color: #666666;
+}
+.overviewCon{
+	text-align: center;
+	margin-top: 70px;
+}
+
+
+
+
+
+
+.advantage,.investor,.celebrity{
+	width: 100%;
+	height: 280px;
+	background-color: #000;
+}
+.advantage{
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/advBg.png) no-repeat;
+	background-size: 100% 100%;
+	overflow: hidden;
+}
+.advanBox{
+	text-align: center;
+	margin-top: 77px;
+}
+.investor{
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/invBg.png) no-repeat;
+	background-size: 100% 100%;
+	overflow: hidden;
+}
+.invBox{
+	text-align: center;
+	margin-top: 59px;
+}
+.adv-con,.inv-introcon,.cel-con,.foot-banner{
+	width: 1280px;
+	height: 1001px;
+	margin: 0 auto;
+}
+.inv-introcon{
+	height: 1234px;
+	overflow: hidden;
+}
+.cel-con{
+	height: 512px;
+}
+.foot-banner{
+	width: 100%;
+	height: 322px;
+	background-color: #f5f5f5;
+}
+.celebrity{
+	background-color: #f5f5f5;
+}
+/*优势内容*/
+.adv{
+	display: inline-block;
+	width: 340px;
+	height: 346px;
+	background-size: 100% 100%;
+	overflow: hidden;
+	vertical-align: top;
+	margin-right: 35px;
+	position: relative;
+}
+.adv-one{
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/advOne.png) no-repeat;
+	margin-left: 90px;
+	margin-top: 74px;
+}
+.adv-two{
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/advTwo.png) no-repeat;
+	margin-top: 74px;
+}
+.adv-three{
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/advThree.png) no-repeat;
+	margin-right: 0;
+	margin-top: 74px;
+}
+.adv-four{
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/advFour.png) no-repeat;
+	margin-left: 90px;
+	margin-top: 36px;
+}
+.adv-five{
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/advFive.png) no-repeat;
+	margin-top: 36px;
+}
+.adv-six{
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/advSix.png) no-repeat;
+	margin-right: 0;
+	margin-top: 36px;
+}
+.adv-introCon{
+	width: 340px;
+	height: 134px;
+	position: absolute;
+	left: 0;
+	top: 213px;
+}
+
+.adv .firstadv{
+	margin-top: 18px;
+}
+
+
+.adv-intro{
+	text-align: center;
+	font-size: 20px;
+	color: #333333;
+	line-height: 33px;
+}
+.adv-con .adv-freeFind{
+	margin-top: 65px;
+	margin-bottom: 72px;
+}
+.freeFind{
+	width: 264px;
+	height: 62px;
+	line-height: 62px;
+	color: #fff;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 24px;
+	display: block;
+	text-decoration: none;
+	cursor: pointer;
+	background: #ff786d;
+	border-radius: 6px;
+	margin-top: 20px;
+}
+
+.oTo{
+	width: 1350px;
+	height: 974px;
+	margin: 0 auto;
+	background: url("http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/oTo.png") no-repeat center top;
+	position: relative;
+}
+.oTo-item{
+	width: 334px;
+	height: 165px;
+	position: absolute;
+	padding: 33px 20px;
+}
+.oTo .item-one{
+	top: 275px;
+	left: 276px;
+}
+.oTo .item-Two{
+	top: 275px;
+	left: 692px;
+	text-align: right;
+}
+.oTo .item-Three{
+	top: 544px;
+	left: 276px;
+}
+.oTo .item-Four{
+	top: 544px;
+	left: 692px;
+	text-align: right;
+}
+.oTo h2{
+	font-size: 26px;
+	color: #FF786D;
+}
+.oTo span{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: #FF786D;
+	border-radius: 50%;
+}
+.oTo .oFP{
+	margin-top: 21px;
+}
+.oTo .oP{
+	text-indent: 1em;
+}
+.oTo p{
+	font-size: 20px;
+	color: #666666;
+	height: 20px;
+	line-height: 20px;
+	margin-bottom: 16px;
+}
+/*使用流程*/
+.flow{
+	width: 100%;
+	height: 612px;
+	background: url("http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/flowBg.png") no-repeat center top;
+}
+.flow-con{
+	width: 1280px;
+	height: 612px;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 66px;
+}
+.flow-con h3{
+	font-size: 28px;
+	color: #fff;
+	margin-top: 34px;
+}
+.flow-item,.space{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 75px;
+}
+.flow-item{
+	width: 164px;
+	margin-right: 25px;
+}
+.space{
+	margin-top: 122px;
+}
+.flowItem-list p{
+	font-size: 24px;
+	color: #fff;
+	height: 24px;
+	line-height: 24px;
+	margin-top: 18px;
+}
+.flowItem-list .icon{
+	width: 66px;
+	height: 67px;
+	margin: 0 auto;
+}
+.change{
+	font-size: 36px;
+	color: #fff;
+	height: 54px;
+	line-height: 54px;
+	margin-top: 66px;
+}
+.change span,.change em{
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+.method{
+	width: 1280px;
+	height: 2065px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.trust{
+	width: 1280px;
+	height: 620px;
+	text-align: center;
+	margin-top: 106px;
+}
+
+.computer{
+	width: 1280px;
+	height: 1031px;
+	text-align: center;
+	margin-top: 128px;
+}
+
+.com-freeFind{
+	margin-top: 0px;
+	margin-bottom: 118px;
+}
+
+/*投资人---轮播图*/
+.swiper-container {
+    min-width: 1350px;
+    height: 892px;
+    margin: 0 auto;
+}
+.swiper-slide {
+	width: 100%;
+    text-align: center;
+    font-size: 18px;
+    background: #ccc;
+
+    /* Center slide text vertically */
+    
+}
+.swiper-container-horizontal>.swiper-pagination{
+	bottom:78px !important;
+}
+.swiper-pagination-bullet{
+	width: 20px !important;
+	height: 20px !important;
+}
+.swiper-pagination-bullet-active{
+	background: #E60012 !important;
+}
+.swislideone{
+	background: url("http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/investor1.png") no-repeat center center;
+}
+.swislidetwo{
+	background: url("http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/investor2.png") no-repeat center center;
+}
+.swislidethree{
+	background: url("http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/investor3.png") no-repeat center center;
+}
+
+
+.promise{
+	min-width: 1350px;
+	height: 501px;
+	background: url("http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/peomise.png") no-repeat center top;
+}
+
+.media{
+	min-width: 1350px;
+	height: 746px;
+	background: url("http://7xlkzr.com1.z0.glb.clouddn.com/img/web2/mediaBg.png") no-repeat center top;
+}
+/*底部广告*/
+.Indexfooter{
+	min-width: 1350px;
+	height: 122px;
+	background: #434343;
+	text-align: center;
+	overflow: hidden;
+}
+.Indexfooter p{
+	height: 22px;
+	line-height: 22px;
+	font-size: 20px;
+	color: #fff;
+	font-weight: normal !important;
+}
+.Indexfooter .firstP{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+
+.findTea{
+	display: block;
+	width: 1280px;
+	height: 2px;
+	margin: 0 auto;
+	position: relative;
+	top:-290px;
+}
+/*hintShadow*/
+.hintShadow{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 12000000000;
+	display: none;
+}
+.hintCon,.registCon,.logCon{
+	width: 720px;
+	height: 460px;
+	background: #fff;
+	border-radius: 6px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -230px;
+	margin-left: -360px;
+	text-align: center;
+	overflow: hidden;
+}
+.logCon,.registCon{
+	display: none;
+}
+.hintCon p{
+	font-size: 20px;
+    color: #35CBDB;
+    font-family: "微软雅黑";
+}
+.oneTitle{
+	margin-top: 95px;
+}
+.hintMobile{
+	display: block;
+	width: 276px;
+    border-radius: 3px;
+    border: 1px solid #d7d7d7;
+    height: 47px;
+    line-height: 47px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 45px;
+    font-size: 16px;
+    padding: 0 12px;
+}
+#next{
+	width: 300px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: #9EE6EE;
+}
+.hintClose{
+	width: 36px;
+	height: 36px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
+.reminder{
+	position: absolute;
+    top: 194px;
+    right: 0px;
+    color: #f77984;
+    font-size: 12px;
+    z-index: 10;
+    width: 200px;
+    text-align: left;
+}
+/*registCon*/
+.registCon h3,.logCon h3{
+	font-size: 20px;
+    color: #35CBDB;
+    font-family: "微软雅黑";
+    margin-top: 95px;
+}
+.regForm,.logForm{
+	width: 300px;
+    height: 143px;
+    border: 1px solid #dbdfed;
+    border-radius: 5px;
+    margin: 30px auto;
+    position: relative;
+}
+.regForm .regUser,.regForm .regInput,.regForm .setPwd,.logForm .logUser,.logForm .logPwd{
+	width: 280px;
+	height: 47px;
+	line-height: 47px;
+    text-align: left;
+    color: #9a9c9f;
+    padding:0 10px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #DBDFED;
+}
+.regForm .regUser,.logForm .logUser{
+	background-color: #eeeeee;
+}
+.codeinfor,.pwdinfor,.lpwdinfor{
+	color: #fc5c6b;
+    position: absolute;
+    top: 66px;
+    right: -213px;
+    width: 200px;
+    text-align: left;
+    font-size: 12px;
+}
+.pwdinfor{
+	top: 114px;
+}
+.verif{
+	display: block;
+    width: 96px;
+    height: 32px;
+    line-height: 32px;
+    color: #fff;
+    background-color: #35CBDB;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 5px;
+    position: absolute;
+    top: 56px;
+    right: 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+.regSure,.logSure{
+	background-color: #35CBDB;
+    width: 300px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+.regBack{
+	position: absolute;
+    top: 10px;
+    left: 20px;
+    height: 26px;
+    line-height: 26px;
+    padding-left: 10px;
+    font-size: 14px;
+    color: #a9aaad;
+    background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/back_bg.png) no-repeat left center;
+    cursor: pointer;
+}
+/*logCon*/
+.logForm{
+	height: 95px;
+	margin-bottom: 15px;
+}
+.forgPwd{
+	color: #5aa4e7;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 210px;
+    text-align: right;
+}
+.logSure{
+	margin-top: 15px;
+}
