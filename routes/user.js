@@ -14,8 +14,9 @@ function _user_router(app) {
             var data = "";
             request.on('data',function(chunk){
                 data += chunk;
-                // var subject_array = JSON.parse(data).data;
-                res.render('index');
+                var subject_array = JSON.parse(data).data;
+                var select_options_array = [];
+                res.render('index',{subjects : subject_array});
             });
         })
     })

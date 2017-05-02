@@ -39,15 +39,6 @@
 						<li><a href="function.html" target="_blank">功能介绍</a></li>
 						<li><a href="computer.html" target="_blank">电脑端下载</a></li>
 						<li><a href="mobile.html" target="_blank">手机端下载</a></li>
-                        <li><a href="" target="_blank">{{test}}</a></li>
-                        <!--<script>
-                            var Vue = new Vue({
-                                el : "#app",
-                                data : {
-                                    test : "hello"
-                                }
-                            });
-                        </script>-->
 					</ul>
                     
 				</div>
@@ -86,6 +77,9 @@
 						<div class="stuSubject">
 							<p>科目：</p>
 							<select name="" id="subject" class="selected">
+								<% for (var i=0;i < subjects.length;i ++) { %>
+									<option value=<%= subjects[i].id %>><%= subjects[i].name %></option>
+								<% } %>
 							</select>
 						</div>
 						<div class="stuSex">
