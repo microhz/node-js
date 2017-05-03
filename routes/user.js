@@ -1,12 +1,19 @@
 var http = require('http')
 var conf = require(global.root + '/config/api')
-var router_base = require('../utils/router_base');
+var router_base = require(global.root + '/utils/router_base');
 var request = require('sync-request');
-var http_proxy = require('../utils/http_utils');
+var http_proxy = require(global.root + '/utils/http_utils');
 function _user_router(app) {
-    // get请求
-    app.get('/login', function (req, res) {
-        res.render('login');
+    // post请求
+    app.post('/login', function (req, res) {
+        var mobile = req.body.mobile;
+        var password = req.body.password;
+        var url = "http://120.26.73.227:8081/website/parent/login";
+        var resp = http_proxy.post(url, {
+            mobile : mobile,
+            password : password
+        });
+        console.log(resp);
     })
 
     app.get('/index', function (req, res) {
