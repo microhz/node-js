@@ -1,3 +1,5 @@
+// 定义全局变量
+global.root = __dirname
 // 依赖模块
 var express = require('express')
 var body_parse = require('body-parser')

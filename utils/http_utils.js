@@ -3,10 +3,15 @@ var http = require('http')
 var promise = require('promise')
 var config = require('../config/api')
 var request = require('sync-request');
-exports.get = function (url, params, req, res, view, opt) {
-    
+module.exports.get = function (url, params, headers) {
+    var response = request("GET", url, headers);
+    return JSON.parse(response.getBody("UTF-8"));
 }
 
-exports.post = function (url, params, req, res, opt) {
-
+module.exports.post = function (url, params, heaers) {
+    var response = request("POST", url, {
+        json : params,
+        heaers : heaers
+    });
+    return JSON.parse(response.getBody("UTF-8"));
 }
