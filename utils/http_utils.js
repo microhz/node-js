@@ -9,22 +9,15 @@ module.exports.get = function (url, params, headers) {
         console("response code error");
         return null;
     }
-    return JSON.parse(response.getBody("UTF-8"));
+    return response.getBody("UTF-8");
 }
 
-module.exports.post = function (url, params, headers) {
-    if (!headers) {
-        headers = {
-            "Content-type": "application/json"
-        }
-    }
-    var response = request("POST", url, {
-        json : params,
-        headers : headers
-    });
+module.exports.post = function (url, params) {
+    var response = request('POST', url, {json : params});
     if (response.statusCode != 200) {
         console.log("response code error");
+        console.log(response.getBody("utf8"))
         return null;
     }
-    return JSON.parse(response.getBody("UTF-8"));
+    return response.getBody("UTF-8");
 }
