@@ -2,14 +2,20 @@
 var http = require('http')
 var promise = require('promise')
 var config = require('../config/api')
-var request = require('sync-request');
+var request = require('sync-request')
+var Q = require('q')
+var Promise = require('Promise')
 module.exports.get = function (url, params, headers) {
+    var deferred = Q.defer();
+    console.log('get url : ' + url + ", params : " + JSON.stringify(params) + ",headers : " + JSON.stringify(headers));
     var response = request("GET", url, {headers : headers, qs : params});
     if (response.statusCode != 200) {
         console("response code error");
         return null;
     }
-    return response.getBody("UTF-8");
+    var data = response.getBody("UTF-8");
+    deferred.resovle(data);
+    return deferred.promise;
 }
 
 module.exports.post = function (url, params) {
@@ -21,3 +27,42 @@ module.exports.post = function (url, params) {
     }
     return response.getBody("UTF-8");
 }
+
+
+function get(url, params, headers){
+    var deferred = Q.defer();
+    console.log('get url : ' + url + ", params : " + JSON.stringify(params) + ",headers : " + JSON.stringify(headers));
+    var response = request("GET", url, {headers : headers, qs : params});
+    if (response.statusCode != 200) {
+        console("response code error");
+        return null;
+    }
+    var data = response.getBody("UTF-8");
+    deferred.resolve(data);
+    return deferred.promise;
+}
+
+var url1 = "http://www.baidu.com";
+var url2 = "http://www.tuicool.com/articles/QnIfqq";
+function chainExecute() {
+    get(url1).then(function(res) {
+        console.log(res);
+        console.log('first request exeucted..');
+        return get(url2)
+    }).then(function(res2){
+        console.log('second request exeucted..');
+        console.log(res2);
+    });
+    // 同步串行 
+}
+
+chainExecute();
+
+function sumAsync() {
+    // 多个异步数据汇总 result_array为返回结果
+    Q.all([get(url1),get(url2)]).then(function(result_array) {
+        console.log(result_array)
+    })
+}
+
+sumAsync();
