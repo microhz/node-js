@@ -11,7 +11,6 @@
 		<meta name="description" content="“家有学霸”代表一种全新的学习方式，是一款真人1对1在线学习辅导软件，它支持老师用手机给学生上课，类似于一个超级中小学在线课堂，学生可以通过手机找到家有学霸上的老师对自己进行1对1线上辅导。老师通过家有学霸给学生上课，可以极大地提高上课的效率，更好地保证学生的学习效果。">
 		<link rel="stylesheet" type="text/css" href="http://www.jiayouxueba.com/static/css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/common.css"/>
-		<!--<link rel="stylesheet" href="css/sweetalert.css" />-->
 		<link rel="stylesheet" href="css/index.css" />
 		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
 		<!--百度统计-->
@@ -67,18 +66,24 @@
 						<div class="stuProvince">
 							<p>所在省份：</p>
 							<select name="" id="province" class="selected">
+								<% for (var i=0;i < provinceResp.length;i ++) { %>
+									<option value=<%= provinceResp[i].id %>><%= provinceResp[i].name %></option>
+								<% } %>
 							</select>
 						</div>
 						<div class="stuGrade">
 							<p>年级：</p>
 							<select name="" id="grade" class="selected">
+								<% for (var i=0;i < gradeResp.length;i ++) { %>
+									<option value=<%= gradeResp[i].id %>><%= gradeResp[i].name %></option>
+								<% } %>
 							</select>
 						</div>
 						<div class="stuSubject">
 							<p>科目：</p>
 							<select name="" id="subject" class="selected">
-								<% for (var i=0;i < subjects.length;i ++) { %>
-									<option value=<%= subjects[i].id %>><%= subjects[i].name %></option>
+								<% for (var i=0;i < subjectResp.length;i ++) { %>
+									<option value=<%= subjectResp[i].id %>><%= subjectResp[i].name %></option>
 								<% } %>
 							</select>
 						</div>
@@ -92,7 +97,9 @@
 						</div>
 						<div class="stuTime">
 							<p class="coachStatus">辅导性质：</p>
+							<label for='long' class='time'><%= coachResp[0].name %></label>
 							<input type="radio" id="long" value="981" name="time" class="time"/>
+							<label for='long' class='time'><%= coachResp[1].name %></label>
 							<input type="radio" id="short" value="980" name="time" class="time"/>
 							<span class="error-time"></span>
 						</div>
@@ -332,7 +339,6 @@
 		<script type="text/javascript" src="js/yx/util.js"></script>
 		
 		<script type="text/javascript" src="http://www.jiayouxueba.com/static/js/jquery.js" disabled="disabled"></script>
-		<!--<script type="text/javascript" src="js/sweetalert.min.js"></script>-->
 		<script type="text/javascript" src="js/index.js"></script>
 		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<script>
@@ -392,5 +398,18 @@
 			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 			document.write(unescape("%3Cspan id='cnzz_stat_icon_1261190500'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261190500' type='text/javascript'%3E%3C/script%3E"));
 		</script>
+		<!--热点检测-->
+		<script type="text/javascript">
+	        window._pt_lt = new Date().getTime();
+	        window._pt_sp_2 = [];
+	        _pt_sp_2.push('setAccount,59a64533');
+	        var _protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	        (function() {
+	            var atag = document.createElement('script'); atag.type = 'text/javascript'; atag.async = true;
+	            atag.src = _protocol + 'js.ptengine.cn/59a64533.js';
+	            var s = document.getElementsByTagName('script')[0];
+	            s.parentNode.insertBefore(atag, s);
+	        })();
+	    </script>
 	</body>
 </html>

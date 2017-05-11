@@ -5,11 +5,11 @@ var config = require('../config/api')
 var request = require('sync-request');
 module.exports.get = function (url, params, headers) {
     var response = request("GET", url, {headers : headers, qs : params});
-    if (response.statusCode != 200) {
+    if (response.statusCode != 200) { //200为请求成功
         console("response code error");
         return null;
     }
-    return response.getBody("UTF-8");
+    return response.getBody("UTF-8"); //将请求结果转为字符串
 }
 
 module.exports.post = function (url, params) {

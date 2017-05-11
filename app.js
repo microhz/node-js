@@ -1,5 +1,5 @@
 // 定义全局变量
-global.root = __dirname
+global.root = __dirname //nodejs自带的路径变量，当前项目所在的路径
 // 依赖模块
 var express = require('express')
 var body_parse = require('body-parser')
@@ -15,7 +15,7 @@ var conf = require('./config/api')
 
 // 设置监听端口
 app.set('port',conf.node_port || 3000)
-app.set('views',__dirname + "/views/page")
+app.set('views',__dirname + "/views/page") //页面渲染时（render），前面默认加入的路径
 
 // 模版引擎 这里指定默认文件后缀，如果不是html需要指定具体后缀
 // app.set('view engine','html')
@@ -25,9 +25,9 @@ app.set('view engine','ejs')
 //加载环境变量
 // app.use(logger('dev'));
 // app.use(bodyParser.json());
-app.use(body_parse.urlencoded({ extended: false }));
+app.use(body_parse.urlencoded({ extended: false })); //编码格式转化
 app.use(cookies_parser());
-app.use(express.static(path.join(__dirname,'/views'))); 
+app.use(express.static(path.join(__dirname,'/views')));   //页面加载静态资源时（css,js）默认加入的路径
 
 //启动及端口
 http.createServer(app).listen(app.get('port'),function(){    
