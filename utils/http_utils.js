@@ -16,7 +16,24 @@ module.exports.get = function (url, params, req, res) {
     }
     var data = response.getBody("UTF-8");
     // res.headers = response.headers;
-    res.sendFile("/",{headers : response.headers});
+    // res.sendFile("/",{headers : response.headers});
+    // res.cookie('set-cookie',response.headers['set-cookie']);
+    console.log(response.headers['set-cookie']);
+    var cookies_arr = response.headers['set-cookie'];
+    if (!cookies_arr && cookies_arr.length > 0) {
+        var cookies = cookie.parse(JSON.stringify(response.headers['set-cookie']));
+        for (var c in cookies_arr) {
+            var e = cookies_arr[c];
+            var e2 = e.split(';');
+            for (var i in e2) {
+                var arr =  e2[i].split('=');
+                var k = arr[0];
+                var v = arr[1];
+                console.log('k=' + k + " , v=" + v);
+                res.cookie(k,v);
+            }
+        }   
+    }
     return data;
     // deferred.resovle(data);
     // return deferred.promise;
