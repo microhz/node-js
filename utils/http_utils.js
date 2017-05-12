@@ -5,26 +5,19 @@ var config = require('../config/api')
 var request = require('sync-request')
 var Q = require('q')
 var Promise = require('Promise')
-module.exports.get = function (url, params, headers) {
-<<<<<<< HEAD
-    var response = request("GET", url, {headers : headers, qs : params});
-    if (response.statusCode != 200) { //200为请求成功
-        console("response code error");
-        return null;
-    }
-    return response.getBody("UTF-8"); //将请求结果转为字符串
-=======
-    var deferred = Q.defer();
+module.exports.get = function (url, params, req, res) {
+    // var deferred = Q.defer();
     console.log('get url : ' + url + ", params : " + JSON.stringify(params) + ",headers : " + JSON.stringify(headers));
-    var response = request("GET", url, { headers: headers, qs: params });
+    var response = request("GET", url, { headers: req.headers, qs: params });
     if (response.statusCode != 200) {
         console("response code error");
         return null;
     }
     var data = response.getBody("UTF-8");
-    deferred.resovle(data);
-    return deferred.promise;
->>>>>>> d7e7e128eb067c11225974f422a947733c37b802
+    res.headers = response.headers;
+    return data;
+    // deferred.resovle(data);
+    // return deferred.promise;
 }
 
 module.exports.post = function (url, params) {
@@ -53,34 +46,34 @@ function get(url, params, headers) {
     return deferred.promise;
 }
 
-var url1 = "http://www.baidu.com";
-var url2 = "http://www.tuicool.com/articles/QnIfqq";
+// var url1 = "http://www.baidu.com";
+// var url2 = "http://www.tuicool.com/articles/QnIfqq";
 
-function chainExecute() {
-    var a = [];
-    get(url1).then(function (res) {
-        a.push(res);
-        console.log(res);
-        console.log('first request exeucted..');
-        return get(url2)
-    }).then(function (res2) {
-        console.log('second request exeucted..');
-        console.log(res2);
-        a.push(res2);
-        return a;
-    }).then(function (a) {
-        console.log(a);
-    });
-    // 同步串行 
-}
+// function chainExecute() {
+//     var a = [];
+//     get(url1).then(function (res) {
+//         a.push(res);
+//         console.log(res);
+//         console.log('first request exeucted..');
+//         return get(url2)
+//     }).then(function (res2) {
+//         console.log('second request exeucted..');
+//         console.log(res2);
+//         a.push(res2);
+//         return a;
+//     }).then(function (a) {
+//         console.log(a);
+//     });
+//     // 同步串行 
+// }
 
-chainExecute();
+// chainExecute();
 
-function sumAsync() {
-    // 多个异步数据汇总 result_array为返回结果
-    Q.all([get(url1), get(url2)]).then(function (result_array) {
-        console.log(result_array)
-    })
-}
+// function sumAsync() {
+//     // 多个异步数据汇总 result_array为返回结果
+//     Q.all([get(url1), get(url2)]).then(function (result_array) {
+//         console.log(result_array)
+//     })
+// }
 
 // sumAsync();
