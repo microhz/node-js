@@ -7,7 +7,7 @@ var Q = require('q')
 var Promise = require('Promise')
 module.exports.get = function (url, params, req, res) {
     // var deferred = Q.defer();
-    console.log('get url : ' + url + ", params : " + JSON.stringify(params) + ",headers : " + JSON.stringify(headers));
+    console.log('get url : ' + url + ", params : " + JSON.stringify(params));
     var response = request("GET", url, { headers: req.headers, qs: params });
     if (response.statusCode != 200) {
         console("response code error");

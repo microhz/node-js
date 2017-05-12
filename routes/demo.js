@@ -15,7 +15,7 @@ module.exports = function (app) {
 
     app.post('/',function(req,res) {
         // post请求
-        var post_params = req.body;l
+        var post_params = req.body;
         console.log(JSON.stringify(post_params));
         res.render("users/demo", {title : "this is title data"});
     })
