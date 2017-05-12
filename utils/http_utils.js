@@ -5,6 +5,7 @@ var config = require('../config/api')
 var request = require('sync-request')
 var Q = require('q')
 var Promise = require('Promise')
+var cookie = require('cookie')
 module.exports.get = function (url, params, req, res) {
     // var deferred = Q.defer();
     console.log('get url : ' + url + ", params : " + JSON.stringify(params));
@@ -14,7 +15,8 @@ module.exports.get = function (url, params, req, res) {
         return null;
     }
     var data = response.getBody("UTF-8");
-    res.headers = response.headers;
+    // res.headers = response.headers;
+    res.sendFile("/",{headers : response.headers});
     return data;
     // deferred.resovle(data);
     // return deferred.promise;
