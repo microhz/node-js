@@ -20,7 +20,7 @@ module.exports.get = function (url, params, req, res) {
     // res.cookie('set-cookie',response.headers['set-cookie']);
     console.log(response.headers['set-cookie']);
     var cookies_arr = response.headers['set-cookie'];
-    if (!cookies_arr && cookies_arr.length > 0) {
+    if (cookies_arr && cookies_arr.length > 0) {
         var cookies = cookie.parse(JSON.stringify(response.headers['set-cookie']));
         for (var c in cookies_arr) {
             var e = cookies_arr[c];
