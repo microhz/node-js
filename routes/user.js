@@ -74,10 +74,10 @@ function _user_router(app) {
            var loginUrl = comSer + "/website/parent/login";  //判断手机号是否注册
            var loginResp = JSON.parse(http_proxy.get(loginUrl,{mobile:mobile,password:pwd},req,res));
            console.log(loginResp);
-           if(loginResp == 104){
+           if(loginResp.code == 104){
                return res.json({code : 1});
            }else{
-                return res.json({code : 0});
+                return res.json({code : 0,userId : loginResp.data.user_id});
            }
         } catch (err) {
             throw err;
@@ -88,10 +88,27 @@ function _user_router(app) {
             var cookies = req.cookies;
            // TODO　call java
            var comSer = conf.java_server.host + ":" + conf.java_server.port;
-           var neteaseUrl = comSer + "/website/v3/common/account-netease";  //判断手机号是否注册
+           var neteaseUrl = comSer + "/website/v3/common/account-netease";  
             var neteaseResp = JSON.parse(http_proxy.get(neteaseUrl,null ,req, res));
-            console.log(neteaseResp);
-           
+            //console.log(neteaseResp);
+           if(neteaseResp.code == 0){
+               return res.json({data:neteaseResp.data});
+           }
+        } catch (err) {
+            throw err;
+        }
+    })
+    app.get("/userinfor",function(req,res) {  //获取用户的accid和token
+        try {
+            var userId = req.query.userId;
+           // TODO　call java
+           var comSer = conf.java_server.host + ":" + conf.java_server.port;
+           var detailUrl = comSer + "/website/parent/detail/"+userId;  
+            var detailResp = JSON.parse(http_proxy.get(detailUrl,null ,req, res));
+            console.log(detailResp);
+           if(detailResp.code == 0){
+               return res.json({data : detailResp.data});
+           }
         } catch (err) {
             throw err;
         }

@@ -8,17 +8,17 @@ var Promise = require('Promise')
 var cookie = require('cookie')
 module.exports.get = function (url, params, req, res) {
     // var deferred = Q.defer();
-    console.log('get url : ' + url + ", params : " + JSON.stringify(params));
+    //console.log('get url : ' + url + ", params : " + JSON.stringify(params));
     var response = request("GET", url, { headers: req.headers, qs: params });
     if (response.statusCode != 200) {
-        console("response code error");
+        //console("response code error");
         return null;
     }
     var data = response.getBody("UTF-8");
     // res.headers = response.headers;
     // res.sendFile("/",{headers : response.headers});
     // res.cookie('set-cookie',response.headers['set-cookie']);
-    console.log(response.headers['set-cookie']);
+    //console.log(response.headers['set-cookie']);
     var cookies_arr = response.headers['set-cookie'];
     if (cookies_arr && cookies_arr.length > 0) {
         var cookies = cookie.parse(JSON.stringify(response.headers['set-cookie']));
@@ -29,7 +29,7 @@ module.exports.get = function (url, params, req, res) {
                 var arr =  e2[i].split('=');
                 var k = arr[0];
                 var v = arr[1];
-                console.log('k=' + k + " , v=" + v);
+                //console.log('k=' + k + " , v=" + v);
                 res.cookie(k,v);
             }
         }   
@@ -52,7 +52,7 @@ module.exports.post = function (url, params) {
 // ---- 以下为多个请求汇总 ---
 function get(url, params, headers) {
     var deferred = Q.defer();
-    console.log('get url : ' + url + ", params : " + JSON.stringify(params) + ",headers : " + JSON.stringify(headers));
+    //console.log('get url : ' + url + ", params : " + JSON.stringify(params) + ",headers : " + JSON.stringify(headers));
     var response = request("GET", url, { headers: headers, qs: params });
 
     if (response.statusCode != 200) {
@@ -60,7 +60,7 @@ function get(url, params, headers) {
         return null;
     }
     var data = response.getBody("UTF-8");
-    console.log(data);
+    //console.log(data);
     deferred.resolve(data);
     return deferred.promise;
 }

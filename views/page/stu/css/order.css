@@ -1,0 +1,158 @@
+/*content*/
+.content{
+	width: 35.8rem;
+	height: 36.7rem;
+	background: url("http://7xlkzr.com1.z0.glb.clouddn.com/img/stu/generalize/order.png") no-repeat;
+	background-size: 100% 100%;
+	margin: 0 auto;
+	position: relative;
+	top: -2.2rem;
+	text-align: center;
+}
+.content .name{
+	margin-top: 7.5rem;
+}
+.content .name,.content .mobile,.content .mcode{
+	width: 26.9rem;
+    height: 3.9rem;
+    line-height: 3.9rem;
+    border: 1px solid #CAD0E5;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    color: #4A4D55;
+    padding: 0 1.5rem;
+    margin-bottom: 1.2rem;
+    background: #EDF1FA;
+}
+.select{
+    position: relative;
+    width: 100%;
+    height: 4rem;
+    margin-bottom: 2.15rem;
+}
+.select .select-item {
+    width: 12.8rem;
+    height: 3.9rem;
+    line-height: 4rem;
+    border: 1px solid #B6B7B9;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 1.6rem;
+    color: #A9A9A9;
+    padding-left: 1.5rem;
+    background: #EDF1FA;
+}
+.select .gradeImg, .select .subImg {
+    display: block;
+    width: 1.8rem;
+    height: 0.9rem;
+    position: absolute;
+    top: 1.55rem;
+    left: 13.5rem;
+}
+.select .subImg {
+    left: 29.3rem;
+}
+.content .mcodeBtn {
+    width: 9.8rem;
+    height: 3.2rem;
+    line-height: 3.2rem;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    background: #9EE6EE;
+    font-size: 1.3rem;
+    color: #fff;
+    position: absolute;
+    right: 3.3rem;
+    top: 18.3rem;
+}
+.select .grade{
+    margin-right: 1.1rem;
+    }
+   .getBtn{
+    width: 30.9rem;
+    height: 5.7rem;
+    background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/mobile/bk-getBtn2.png) no-repeat;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    line-height: 4.8rem;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #fff;
+}
+.score{
+	width: 35.8rem;
+	height: 25.4rem;
+	margin: 0 auto;
+}
+.phone{
+	display: block;
+	width: 34.1rem;
+	height: 3.8rem;
+	line-height: 3.8rem;
+	border: 0.1rem solid #35CBDB;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 2.5rem;
+	margin: 0 auto;
+	font-size: 1.6rem;
+	color: #35CBDB;
+	margin-top: 2.8rem;
+	margin-bottom: 3.2rem;
+	background: #fff;
+}
+/*年级列表*/
+.gradeShadow,.subjectShadow{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0.4);
+	display: none;
+}
+.selectGrade,.selectSubject{
+	width: 100%;
+	height: 37rem;
+	background-color: #e1e5f5;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+}
+.grade-title,.cancel,.sub-title{
+	width: 100%;
+	height: 4.5rem;
+	line-height: 4.5rem;
+	font-size: 1.6rem;
+	text-align: center;
+	background-color: #f6f6f6;
+	color: #939598;
+}
+.cancel{
+	margin-top: 1rem;
+	color: #4E9EE5;
+}
+.grade-con,.sub-con{
+	width: 100%;
+	height: 27.2rem;
+	background-color: #fff;
+	overflow: scroll;
+	-webkit-overflow-scrolling : touch;
+}
+.grade-con span,.sub-con span{
+	display: block;
+	width: 100%;
+	height: 4.5rem;
+	line-height: 4.5rem;
+	border-bottom: 1px solid #E1E5F5;
+	font-size: 1.6rem;
+	text-align: center;
+	color: #4A4D55;
+}
+.parentId{
+	display: none;
+}

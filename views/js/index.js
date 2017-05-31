@@ -81,12 +81,23 @@ function dylogin(mobile,pwd,uname,gradeId,subjectId,natureId,remark){
 				$(".logSure").off("click.loginevent");
 				$(".logSure").css("background-color","#76DCE7");
 				$(".logSure").html("登录中...");
-                // var userId = data.data.user_id;
+                var userId = data.userId;
                 //获取用户的accid和token
 				getInfor();
+                //获取用户信息
+                getUserInfor(userId);
             }else{
                 $(".lpwdinfor").html("请输入正确密码");
             }
+        }
+    })
+}
+function getUserInfor(userId){
+    $.ajax({
+        type:"get",
+        url:"/userinfor?userId="+userId,
+        success:function(data){
+            console.log(data);
         }
     })
 }
@@ -96,7 +107,19 @@ function getInfor(){
 		type:"get",
 		url:"/netease",
 		success:function(data){
-			
+			console.log(data);
+            Login.requestLogin(data.data.accid,data.data.token);
 		}
 	});
+}
+//云信登录
+var Login = {
+	requestLogin: function(account, pwd) {
+		setCookie('uid',account.toLocaleLowerCase());
+		//自己的appkey就不用加密了
+		// setCookie('sdktoken',pwd);
+		setCookie('sdktoken',pwd);
+//		window.location.href = './main.html';
+			
+	}
 }

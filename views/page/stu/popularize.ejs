@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>邀请有奖</title>
+  <meta name="apple-touch-fullscreen" content="YES">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="YES">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="Content-Security-Policy" content="" id="whiteList">
+  <link rel="stylesheet" href="page/stu/css/pop.css">
+  <link rel="stylesheet" href="page/stu/css/order.css">
+  <link rel="stylesheet" href="http://app.jiayouxueba.cn/api/doc/css/reset.css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="http://7xlkzr.com1.z0.glb.clouddn.com/js/stu/common.css" />
+  <script src="https://s1.jiayouxueba.cn/js/common/h5rem-reset.js" charset="utf-8"></script>
+  <script src="http://app.jiayouxueba.cn/api/doc/js/jquery.js" charset="utf-8"></script>
+	<script src="http://7xlkzr.com1.z0.glb.clouddn.com/js/stu/alertPopShow.js" type="text/javascript" charset="utf-8"></script>
+	<script src="http://7xlkzr.com1.z0.glb.clouddn.com/img/stu/generalize/countUp-jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="http://7xlkzr.com1.z0.glb.clouddn.com/img/stu/generalize/countUp.js" type="text/javascript" charset="utf-8"></script>
+	<script src="http://7xlkzr.com1.z0.glb.clouddn.com/img/stu/generalize/countUp.module.js" type="text/javascript" charset="utf-8"></script>
+	<script src="page/stu/js/config.js"></script>
+	<script src="page/stu/js/popu.js"></script>
+</head>
+
+<body>
+	<div class="banner">
+		<div class="stuNum" id="addNum">256850</div>
+	</div>
+	<% include order.ejs %>
+	<div class="listenSuccess">
+ 		<h2 class="sucTitle">恭喜您成功领取</h2>
+		<p class="lesson-con1 les">恭喜您成功预约家有学霸免费试听课！我们的专业顾问将尽快和您联系。</p>
+		<p class="lesson-con2 les">如果您希望优先安排试听课,可以拨打客服热线：<a href="tel:400-677-2112">400-677-2112</a></p>
+		<div class="loadApp">下载家有学霸APP</div>
+ 	</div>
+	<div class="score">
+		<img src="http://7xlkzr.com1.z0.glb.clouddn.com/img/stu/generalize/score.png"/>
+	</div>
+	<a href="tel:400-677-2112" class="phone">拨打客服电话：400-677-2112</a>
+	<div class="gradeShadow">
+ 		<div class="selectGrade">
+			<div class="grade-title">请选择年级</div>
+			<div class="grade-con">
+				<% for (var i=0;i < gradeResp.length;i ++) { %>
+					<span value=<%= gradeResp[i].id %>><%= gradeResp[i].name %></span>
+				<% } %>
+			</div>
+			<div class="cancel">取消</div>
+		</div>
+ 	</div>
+ 	<div class="subjectShadow">
+ 		<div class="selectSubject">
+			<div class="sub-title">请选择科目</div>
+			<div class="sub-con">
+				<% for (var i=0;i < subResp.length;i ++) { %>
+					<span value=<%= subResp[i].id %>><%= subResp[i].name %></span>
+				<% } %>
+			</div>
+			<div class="cancel">取消</div>
+		</div>
+ 	</div>
+  
+  <script type="text/javascript">
+  		var num = $("#addNum").html();
+		var options = {
+		  useEasing : true, 
+		  useGrouping : true, 
+		  separator : '', 
+		  decimal : '.', 
+		};
+		setInterval(function(){
+			var random = Math.round(Math.random()*19+1);
+			num2 = parseInt(num)+random;
+			var demo = new CountUp("addNum", num, num2, 0, 2, options);
+			num = num2;
+			demo.start();
+		},2000)
+	</script>
+	<!--热点检测-->
+	<script type="text/javascript">
+    window._pt_lt = new Date().getTime();
+    window._pt_sp_2 = [];
+    _pt_sp_2.push('setAccount,4619d2fc');
+    var _protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    (function() {
+        var atag = document.createElement('script'); atag.type = 'text/javascript'; atag.async = true;
+        atag.src = _protocol + 'js.ptengine.cn/4619d2fc.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(atag, s);
+    })();
+  </script>
+  <!--<script src="https://s19.cnzz.com/z_stat.php?id=1261974164&web_id=1261974164" language="JavaScript"></script>-->
+    <script type="text/javascript">
+    	var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261974164'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1261974164' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</body>
+</html>
