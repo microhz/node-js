@@ -2,23 +2,69 @@
 var http = require('http')
 var promise = require('promise')
 var config = require('../config/api')
-var request = require('sync-request')
 var Q = require('q')
 var Promise = require('Promise')
 var cookie = require('cookie')
-module.exports.get = function (url, params, req, res) {
-    // var deferred = Q.defer();
-    //console.log('get url : ' + url + ", params : " + JSON.stringify(params));
-    var response = request("GET", url, { headers: req.headers, qs: params });
+var _url = require('url')
+var request = require('request');
+module.exports.get = function (url, options, req, res) {
+    return new Promise((resolve,reject) => {
+        request(url, function(err, response ,body) {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(body);
+            }
+        })
+    })
+}
+
+module.exports.getWithParams = function (url, params, req, res) {
+    return new Promise((resolve,reject) => {
+        request(url, options, function(err, response ,body) {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(body);
+            }
+        })
+    })
+}
+
+
+
+function f1(p1, callback){
+    // TODO ...
+
+
+    callback(p1[1]);
+    // TODO 
+
+
+    callback(p1[2]);
+}
+
+function a(array, callback) {
+    for (var i in array) {
+        callback(array[i]);
+    }
+    // TODO 
+
+    console.log('do something....');
+}
+
+a([1,2,3],function(e){
+    console.log('e : ' + e);
+})
+
+module.exports.post = function (url, params) {
+    var response = request("POST", url,{body : JSON.stringify(params)});
     if (response.statusCode != 200) {
-        //console("response code error");
+        console.log("response code error");
+        console.log(response.getBody("utf8"))
         return null;
     }
-    var data = response.getBody("UTF-8");
-    // res.headers = response.headers;
-    // res.sendFile("/",{headers : response.headers});
-    // res.cookie('set-cookie',response.headers['set-cookie']);
-    //console.log(response.headers['set-cookie']);
+
     var cookies_arr = response.headers['set-cookie'];
     if (cookies_arr && cookies_arr.length > 0) {
         var cookies = cookie.parse(JSON.stringify(response.headers['set-cookie']));
@@ -34,19 +80,8 @@ module.exports.get = function (url, params, req, res) {
             }
         }   
     }
-    return data;
-    // deferred.resovle(data);
-    // return deferred.promise;
-}
-
-module.exports.post = function (url, params) {
-    var response = request('POST', url, { json: params });
-    if (response.statusCode != 200) {
-        console.log("response code error");
-        console.log(response.getBody("utf8"))
-        return null;
-    }
-    return response.getBody("UTF-8");
+    
+    return JSON.parse(response.getBody("utf8"));
 }
 
 // ---- 以下为多个请求汇总 ---
