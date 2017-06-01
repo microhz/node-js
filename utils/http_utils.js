@@ -9,7 +9,7 @@ var _url = require('url')
 var request = require('request');
 module.exports.get = function (url, options, req, res) {
     return new Promise((resolve,reject) => {
-        request(url, function(err, response ,body) {
+        request(url, function(err, response ,body) { //response--java相应给node  req--浏览器请求node   res--node返回给浏览器
             if (err) {
                 reject(err);
             } else {
@@ -32,30 +32,6 @@ module.exports.getWithParams = function (url, params, req, res) {
 }
 
 
-
-function f1(p1, callback){
-    // TODO ...
-
-
-    callback(p1[1]);
-    // TODO 
-
-
-    callback(p1[2]);
-}
-
-function a(array, callback) {
-    for (var i in array) {
-        callback(array[i]);
-    }
-    // TODO 
-
-    console.log('do something....');
-}
-
-a([1,2,3],function(e){
-    console.log('e : ' + e);
-})
 
 module.exports.post = function (url, params) {
     var response = request("POST", url,{body : JSON.stringify(params)});

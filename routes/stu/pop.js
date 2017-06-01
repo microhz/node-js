@@ -5,26 +5,26 @@ var http_proxy = require(global.root + '/utils/http_utils');
 var route_base = require(global.root + '/utils/router_base');
 var co = require('co');
 var request = require('request');
-function _pop_router(app) {
-    
+function _pop_router(app) {  
     app.get("/pop",function(req,res) {
         try {
         //    var comSer = conf.java_server.host + ":" + conf.java_server.port;
             var comSer = route_base.getRemoteUrl();
            var gradeUrl = comSer + "/website/item/type/3";     //年级
-
          var g1 =  http_proxy.get(gradeUrl,null,req,res)
-
-
         //    var gradeResp = JSON.parse(http_proxy.get(gradeUrl,null,req,res)).data;
-           var subUrl = comSer + "/website/item/type/4";     //科目
+        var subUrl = comSer + "/website/item/type/4";     //科目
         //    var subResp = JSON.parse(http_proxy.get(subUrl,null,req,res)).data;
-
         var g2 = http_proxy.get(subUrl,null,req,res)
+        var provinceUrl =  comSer + "/website/item/type/1";     //省份
+        //    var subResp = JSON.parse(http_proxy.get(subUrl,null,req,res)).data;
+        var g3 = http_proxy.get(subUrl,null,req,res)
+        var coachUrl = comSer + "/website/item/type/26";     //辅导性质
+        //    var subResp = JSON.parse(http_proxy.get(subUrl,null,req,res)).data;
+        var g4 = http_proxy.get(subUrl,null,req,res)
            // TODO　call java
         //    res.render("stu/popularize",{gradeResp:gradeResp,subResp:subResp});
         console.log('start...');
-
         // async
         var a = request.get(gradeUrl);
         var b = request.get(subUrl);
@@ -37,9 +37,8 @@ function _pop_router(app) {
         // }).then(function(data) {
         //     console.log(data);
         // });
-
-
         // var a = new Promise(function(resolve, reject) {
+ 
         //     request.get(gradeUrl, function(err, response ,body) {
         //         if (err) {
         //             reject(err);
@@ -52,20 +51,22 @@ function _pop_router(app) {
 
         var p1 = http_proxy.get(gradeUrl,null,req,res);
         var p2 = http_proxy.get(subUrl,null,req,res);
+        var p3 = http_proxy.get(provinceUrl,null,req,res);
+        var p4 = http_proxy.get(coachUrl,null,req,res);
         co(function *() {
-            var result = yield [p1,p2];
-            console.log(result);
-            res.send(result);
+            var result = yield [p1,p2,p3,p4];
+            // console.log(result);
+            var graderesp = JSON.parse(result[0]).data;
+           var subjectResp = JSON.parse(result[1]).data;
+           var provinceResp = JSON.parse(result[2]).data;
+           var coachResp = JSON.parse(result[3]).data;
+            res.render('index',{provinceResp:provinceResp,gradeResp:graderesp,subjectResp:subjectResp,coachResp:coachResp});
         }).catch (err => {
             console.log(err);
         })
-        console.log("test");
-
 
         // var n1 = g1.next();
         // var n2 = g2.next();
-
-        console.log('test22...');
         } catch (err) {
             throw err;
         }
