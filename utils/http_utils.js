@@ -7,17 +7,17 @@ var Promise = require('Promise')
 var cookie = require('cookie')
 var _url = require('url')
 var request = require('request');
-module.exports.get = function (url, options, req, res) {
-    return new Promise((resolve,reject) => {
-        request(url, function(err, response ,body) { //response--java相应给node  req--浏览器请求node   res--node返回给浏览器
-            if (err) {
-                reject(err);
-            } else {
-                resolve(body);
-            }
-        })
-    })
-}
+// module.exports.get = function (url, options, req, res) {
+//     return new Promise((resolve,reject) => {
+//         request(url, function(err, response ,body) { //response--java相应给node  req--浏览器请求node   res--node返回给浏览器
+//             if (err) {
+//                 reject(err);
+//             } else {
+//                 resolve(body);
+//             }
+//         })
+//     })
+// }
 
 module.exports.getWithParams = function (url, params, req, res) {
     return new Promise((resolve,reject) => {

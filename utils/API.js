@@ -33,12 +33,11 @@ module.exports.get = function (url, params, req, res, options) {
                 resolve(body);
             }
         }
-
         // 此处为http请求相关参数
         var options = {
             method : "GET",
             url : url,
-            qs : params ? qs.stringify(params) : "",
+            qs : params ? params : "",
             // headers : {
             //     "Content-type" : "application/json",
             //     "Cookie" : cookie_parse.JSONCookies(req.cookies)
@@ -48,7 +47,6 @@ module.exports.get = function (url, params, req, res, options) {
                 {name : "Cookie" , value : cookie_parse.JSONCookies(req.cookies)}
             ]
         }
-
         // 发送请求
         request(options, callback);
     })

@@ -1,58 +1,30 @@
 var http = require('http')
 var conf = require(global.root + '/config/api')
-var router_base = require(global.root + '/utils/router_base');
-var http_proxy = require(global.root + '/utils/http_utils');
+var http_proxy = require(global.root + '/utils/API');
 var route_base = require(global.root + '/utils/router_base');
 var co = require('co');
 var request = require('request');
 function _pop_router(app) {  
-    app.get("/pop",function(req,res) {
+    app.get("/index",function(req,res) {
         try {
         //    var comSer = conf.java_server.host + ":" + conf.java_server.port;
-            var comSer = route_base.getRemoteUrl();
-           var gradeUrl = comSer + "/website/item/type/3";     //年级
-         var g1 =  http_proxy.get(gradeUrl,null,req,res)
+        var comSer = route_base.getRemoteUrl();
+        var gradeUrl = comSer + "/website/item/type/3";     //年级
         //    var gradeResp = JSON.parse(http_proxy.get(gradeUrl,null,req,res)).data;
         var subUrl = comSer + "/website/item/type/4";     //科目
         //    var subResp = JSON.parse(http_proxy.get(subUrl,null,req,res)).data;
-        var g2 = http_proxy.get(subUrl,null,req,res)
         var provinceUrl =  comSer + "/website/item/type/1";     //省份
         //    var subResp = JSON.parse(http_proxy.get(subUrl,null,req,res)).data;
-        var g3 = http_proxy.get(subUrl,null,req,res)
         var coachUrl = comSer + "/website/item/type/26";     //辅导性质
         //    var subResp = JSON.parse(http_proxy.get(subUrl,null,req,res)).data;
-        var g4 = http_proxy.get(subUrl,null,req,res)
            // TODO　call java
         //    res.render("stu/popularize",{gradeResp:gradeResp,subResp:subResp});
         console.log('start...');
-        // async
-        var a = request.get(gradeUrl);
-        var b = request.get(subUrl);
 
-        
-        // co(function *() {
-        //     request.get(gradeUrl, function*(err, response, body) {
-        //         return yield body;
-        //     });
-        // }).then(function(data) {
-        //     console.log(data);
-        // });
-        // var a = new Promise(function(resolve, reject) {
- 
-        //     request.get(gradeUrl, function(err, response ,body) {
-        //         if (err) {
-        //             reject(err);
-        //         } else {
-        //             resolve(body);
-        //             console.log(body);
-        //         }
-        //     });
-        // })
-
-        var p1 = http_proxy.get(gradeUrl,null,req,res);
-        var p2 = http_proxy.get(subUrl,null,req,res);
-        var p3 = http_proxy.get(provinceUrl,null,req,res);
-        var p4 = http_proxy.get(coachUrl,null,req,res);
+        var p1 = http_proxy.get(gradeUrl,null,req,res,null);
+        var p2 = http_proxy.get(subUrl,null,req,res,null);
+        var p3 = http_proxy.get(provinceUrl,null,req,res,null);
+        var p4 = http_proxy.get(coachUrl,null,req,res,null);
         co(function *() {
             var result = yield [p1,p2,p3,p4];
             // console.log(result);
@@ -71,7 +43,6 @@ function _pop_router(app) {
             throw err;
         }
     })
-   
    app.get("/getcode",function(req,res) {
         try {
            var mobile = req.query.mobile; 

@@ -43,7 +43,7 @@ $(function(){
 function isRegiste(mobile,uname,provinceId,gradeId,subjectId,sexId,natureId,remark){
 	$.ajax({
 		type:"get",
-		url:"/isRegister?mobile="+mobile,
+		url:"/user/isRegister?mobile="+mobile,
 		success:function(data){
             if(data.code == 0){
                 $(".logCon").css("display","block").siblings().css("display","none");
@@ -71,7 +71,7 @@ function back(mobile){
 function dylogin(mobile,pwd,uname,gradeId,subjectId,natureId,remark){
     $.ajax({
 		type:"get",
-		url:"/logined",
+		url:"/user/logined",
 		data:{mobile:mobile,password:pwd},
 		success:function(data){
             console.log(data);
@@ -82,6 +82,7 @@ function dylogin(mobile,pwd,uname,gradeId,subjectId,natureId,remark){
 				$(".logSure").css("background-color","#76DCE7");
 				$(".logSure").html("登录中...");
                 var userId = data.userId;
+                console.log(userId);
                 //获取用户的accid和token
 				getInfor();
                 //获取用户信息
@@ -95,7 +96,7 @@ function dylogin(mobile,pwd,uname,gradeId,subjectId,natureId,remark){
 function getUserInfor(userId){
     $.ajax({
         type:"get",
-        url:"/userinfor?userId="+userId,
+        url:"/user/infor?userId="+userId,
         success:function(data){
             console.log(data);
         }
@@ -105,7 +106,7 @@ function getUserInfor(userId){
 function getInfor(){
 	$.ajax({
 		type:"get",
-		url:"/netease",
+		url:"/user/netease",
 		success:function(data){
 			console.log(data);
             Login.requestLogin(data.data.accid,data.data.token);
