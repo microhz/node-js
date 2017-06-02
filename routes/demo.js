@@ -1,8 +1,9 @@
 var http = require('http')
-var http_utils = require('../utils/http_utils')
+var API = require('../utils/API')
 var conf = require('../config/api')
 var host = conf.java_server.host;
 var port = conf.java_server.port;
+var co = require('co')
 module.exports = function (app) {
     // get请求
     app.get('/',function(req,res) {
@@ -48,7 +49,7 @@ module.exports = function (app) {
     app.get('/guide', function(req,res) {
         // res.render('jyxb-guide', {test: "value"});
         try {
-            http_utils.get("http://120.26.73.227:8081/website/item/type/3",null,req,res,"users/demo");
+            API.get("http://120.26.73.227:8081/website/item/type/3",null,req,res,"users/demo");
             throw err;
         } catch (err) {
             console.log(err.stack);
@@ -58,5 +59,18 @@ module.exports = function (app) {
 
     app.get('/test-vue', function(req,res) {
         
+    })
+
+
+    app.post('/demo/login',function(req, res) {
+        // 获取post参数
+        var params = req.body;
+        co(function * () {
+            var loginPromise = yield API.post("http://120.26.73.227:8081/api/parent/login", params, req, res);
+            console.log(loginPromise);
+
+            var cookieNeedGet = yield API.get("http://120.26.73.227:8088/api/teacher-invite/share", params, req, res);
+            console.log(cookieNeedGet);
+        })
     })
 }

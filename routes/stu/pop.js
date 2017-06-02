@@ -1,7 +1,7 @@
 var http = require('http')
 var conf = require(global.root + '/config/api')
 var router_base = require(global.root + '/utils/router_base');
-var http_proxy = require(global.root + '/utils/http_utils');
+var http_proxy = require(global.root + '/utils/API');
 var route_base = require(global.root + '/utils/router_base');
 var co = require('co');
 var request = require('request');
