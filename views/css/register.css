@@ -1,0 +1,258 @@
+/*login css*/
+body{
+	background-color: #f5f5f5;
+}
+.header{
+	position: relative;
+}
+
+/*content部分*/
+.content{
+	width:1280px;
+	height:85%;
+	overflow:hidden;
+	margin:0 auto;
+	min-height: 500px;
+	position: relative;
+}
+.register-box{
+	width: 748px;
+	height: 616px;
+	min-height: 616px;
+	overflow: hidden;
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/rigsteBg.png) no-repeat;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -297px;
+	margin-left: -378px;
+}
+.register-box .stu-regist{
+	height: 20px;
+    line-height: 20px;
+    font-size: 20px;
+    color: #35CBDB;
+    text-align: center;
+    font-weight: 600;
+    margin: 70px 0 35px 0;
+}
+.form-box .phoneNum,.form-box .imgCode,.form-box .code,.form-box .set-pwd,.form-box .set-name,.form-box .selected{
+	width: 280px;
+	height: 47px;
+	/*line-height: 47px;*/
+	border: none;
+	border-bottom: 1px solid #DBDFED;
+	padding: 0 10px;
+	font-size: 14px;
+}
+.form-box .selected{
+	border-radius:0 0 5px 5px ;
+	width: 300px;
+	outline:none;
+	padding:0 12px;
+	/*很关键：将默认的select选择框样式清除*/
+  	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	/*在选择框的最右侧中间显示小箭头图片*/
+  	background:url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/down_arrow.png) no-repeat scroll right 12px center transparent;
+}
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand {
+	display:none;
+}
+ 
+ 
+.setsex{
+	width: 300px;
+	margin: 0 auto;
+	margin-top: 25px;
+	position: relative;
+}
+.setsex .error-sex{
+	position: absolute;
+	top: 0;
+	right: 10px;
+	color: #f65c6b;
+	font-size: 12px;
+}
+.setsex .sex {
+	background-color:#fff;
+	width:15px;
+	height:15px;
+}
+.setsex label {
+	font-size:14px;
+	vertical-align:top;
+	color:#4a4d55;
+}
+
+/*更改性别的单选按钮样式*/
+input[type='radio'].sex {
+	display:none;
+	height:20px;
+}
+label.sex:hover{
+	background:url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/radio_hover.png) no-repeat;
+	height:20px;
+	padding-left:25px;
+}
+
+label.sex {
+	background:url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/radio_normal.png) no-repeat;
+	height:20px;
+	padding-left:25px;
+}
+
+input[type='radio'].sex:checked + .sex {
+	background:url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/radio_check.png) no-repeat;
+}
+
+
+ 
+.form-box .acode-img{
+	position: absolute;
+	top:51px;
+	right:10px
+}
+
+.form-box .login-pwd{
+	margin-top: 1px;
+	border-radius: 0px 0px 5px 5px;
+}
+.form-box .phoneNum{
+	border-radius: 5px 5px 0 0;
+}
+.form-box{
+	width: 300px;
+	height: 238px;
+	border: 1px solid #DBDFED;
+	margin-left: 222px;
+	border-radius: 5px;
+	position: relative;
+}
+.form-box .reset-pwd{
+	border-radius: 0 0 5px 5px;
+}
+.form-box .getCode{
+	display: block;
+	width: 96px;
+	height: 32px;
+	line-height: 32px;
+	color: #fff;
+	background-color: #9ee6ee;
+	text-align: center;
+	font-size: 12px;
+	border-radius:5px;
+	cursor: pointer;
+	position: absolute;
+	top: 56px;
+	right: 10px;
+	border: none;
+	outline: none;
+}
+.register-box .btnSure{
+	width: 300px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	margin-left: 222px;
+	margin-top: 24px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	cursor: pointer;
+	/*font-weight: 600;*/
+}
+.register-box .btnSure{
+	background-color: #35CBDB;
+	color: #fff;
+}
+.register-box .agree{
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	font-size: 12px;
+	color: #9a9c9f;
+	margin-top: 10px;
+}
+.register-box .agree a{
+	text-decoration: none;
+	color: #71B1EA;
+}
+
+/*错误提示信息*/
+.form-box .error-phone,.form-box .error-code,.form-box .error-pwd,.form-box .error-imgCode,.form-box .error-name,.form-box .error-province{
+	position: absolute;
+    right: -180px;
+    color: #f65c6b;
+    font-size: 12px;
+    width: 170px;
+}
+.form-box .error-phone{
+	top:15px;
+}
+.form-box .error-code{
+	top: 64px;
+}
+.form-box .error-pwd{
+	top: 112px;
+}
+.form-box .error-imgCode{
+	top:64px;
+}
+.form-box .error-name{
+	top:160px;
+}
+.form-box .error-province{
+	top:207px;
+}
+/*footer*/
+.footer{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -262.5px;
+}
+
+/*弹窗信息*/
+.inforShadow{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 22;
+	display: none;
+}
+.inforWarn{
+	width: 350px;
+	height: 150px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	background: #fff;
+	border-radius: 6px;
+	margin-top: -75px;
+	margin-left: -175px;
+}
+.inforMsg{
+	line-height: 150px;
+	text-align: center;
+}
+.msgClose{
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+}
+.msgClose img{
+	width: 100%;
+	height: 100%;
+}

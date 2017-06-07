@@ -39,6 +39,15 @@ $(function(){
             })
         }
     });
+
+    //点击登录跳转到登录界面
+	$(".denglu").click(function(){
+		window.location = "login";
+	})
+    //点击注册跳转到注册界面
+	$(".zhuce").click(function(){
+		window.location = "register";
+	})
 })
 function isRegiste(mobile,uname,provinceId,gradeId,subjectId,sexId,natureId,remark){
 	$.ajax({
@@ -102,6 +111,8 @@ function getUserInfor(userId){
         }
     })
 }
+
+//点击如何上课
 //获取用户的accid和token
 function getInfor(){
 	$.ajax({

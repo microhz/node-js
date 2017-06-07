@@ -1,0 +1,179 @@
+html,body{
+	height: 100%;
+	background-color: #f5f5f5;
+}
+.banner{
+	width: 100%;
+	height: 360px;
+	background-color: #35CBDB;
+}
+.banner-box{
+	width: 1280px;
+	height: 360px;
+	margin: 0 auto;
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/banner.png) no-repeat;
+}
+.phone{
+	float: right;
+	margin-right: 15px;
+	margin-top: 33px;
+	margin-left: 15px;
+}
+.back a{
+	display: block;
+	width: 65px;
+	height: 30px;
+	line-height: 30px;
+	float: right;
+	margin-top: 31px;
+	color: #9A9C9F;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	cursor: pointer;
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/home.png) no-repeat left center;
+	padding-left: 25px;
+	text-decoration: none;
+}
+
+.main{
+	width: 1280px;
+	margin: 0 auto;
+}
+.main .stairs-one{
+	width: 100%;
+	height: 620px;
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/stairs_one.png) no-repeat;
+}
+.main .stairs-two{
+	width: 100%;
+	height: 560px;
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/stairs_two.png) no-repeat;
+	position: relative;
+}
+.main .stairs-three{
+	width: 100%;
+	height: 472px;
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/stairs_three.png) no-repeat;
+	position: relative;
+}
+.main .stairs-two .stair-btn{
+	position: absolute;
+	height: 49px;
+	width: 198px;
+	left: 685px;
+	top: 301px;
+	cursor: pointer;
+}
+.main .stairs-three .stair-btn{
+	position: absolute;
+	height: 49px;
+	width: 198px;
+	left: 88px;
+	top: 250px;
+	cursor: pointer;
+}
+.main .stairs-three .video-view{
+	position: absolute;
+	height: 300px;
+	width: 480px;
+	left: 685px;
+	top: 46px;
+	cursor: pointer;
+	border:1px solid #000000;
+}
+
+.slideNav{
+	width: 30px;
+	height: 136px;
+	position: fixed;
+	top: 42%;
+	right: 3%;
+	background:url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/slide_bg.png) no-repeat center top;
+	display: none;
+}
+.slideNav .slideone,.slideNav .slidetwo,.slideNav .slidethree{
+	width: 27px;
+	height: 27px;
+	line-height: 27px;
+	text-align: center;
+	border:1px solid #939598;
+	border-radius: 50%;
+	background-color: #F5F5F5;
+	color: #A7A8AB;
+	font-weight: bold;
+	margin-bottom: 26px;
+	font-size: 18px;
+}
+.slideNav .slideone:hover,.slideNav .slidetwo:hover,.slideNav .slidethree:hover{
+	border:1px solid #35CBDB;
+	color: #35CBDB;
+}
+.slideNav .active{
+	border:1px solid #35CBDB;
+	color: #35CBDB;
+}
+
+
+/*弹窗部分样式*/
+.mask-view{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	display: none;
+}
+.mask-view .mask-bg{
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
+.mask-view .mask-qcode{
+	width: 1000px;
+	height: 563px;
+	margin: auto;
+	position: relative;
+	top: 50%;
+	margin-top: -285px;
+	z-index: 9;
+}
+.mask-view .mask-qcode .video{
+	width: 100%;
+	height: 100%;
+}
+.mask-view .mask-qcode .video video{
+	width: 100%;
+	height: 100%;
+}
+.mask-view .mask-close{
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/mask-view-close.png) no-repeat;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: -47px;
+    right: -53px;
+    cursor: pointer;
+}
+
+.tea-login{
+	display:inline-block;
+	float:right;
+	width:88px;
+	height:36px;
+	line-height:36px;
+	background-color:#4ed1df;
+	color:#fff;
+	text-align:center;
+	text-decoration:none;
+	border-radius:5px;
+	margin-top: 28px;
+	font-size:14px;
+	font-family:"微软雅黑";
+	cursor: pointer;
+	margin-right: 12px;
+}

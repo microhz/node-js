@@ -1,0 +1,49 @@
+html,body{
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+}
+
+.content{
+	width: 1280px;
+	margin: 0 auto;
+	height: 4240px;
+	position: relative;
+}
+.linkcom{
+	display: block;
+	width: 582px;
+	height: 467px;
+	cursor: pointer;
+	position: absolute;
+	left: 351px;
+	bottom: 435px;
+	/*background: #000;
+	opacity: 0.5;*/
+}
+/*底部广告*/
+.footban{
+	width: 1280px;
+	height: 326px;
+	margin: 0 auto;
+	overflow: hidden;
+	background-color: #F5F5F5;
+}
+.ad{
+	text-align: center;
+	margin-top: 54px;
+	margin-bottom: 30px;
+}
+.freeFind{
+	width: 236px;
+	height: 68px;
+	line-height: 68px;
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/findTeacherBtn.png) no-repeat;
+	color: #fff;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 30px;
+	display: block;
+	text-decoration: none;
+	cursor: pointer;
+}

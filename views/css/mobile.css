@@ -1,0 +1,191 @@
+.header{
+	position: fixed;
+	min-width: 1280px;
+}
+.fullPage{
+	width: 100%;
+	height: 100%;
+}
+.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff; }
+.wrapper{
+	max-width: 1280px;
+	height: 100%;
+	margin: 0 auto;
+}
+.section-one .wrapper{
+	position: relative;
+}
+.section .wrapper .inner{
+	display: block;
+	height: 86.5%;
+	margin: 0 auto;
+	margin-top: 88px;
+	margin-bottom: 4.6%;
+	position: relative;
+}
+.section .wrapper .inner img{
+	width: 100%;
+	height: 100%;
+}
+/*.section-one .wrapper .inner{
+	position: relative;
+}*/
+.section-one .wrapper .btn{
+	display: block;
+	/*width: 270px;*/
+	height: 5.2%;
+	position: absolute;
+	z-index: 9;
+}
+.section-one .wrapper .appstore{
+	left: 20%;
+	top: 61%;
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/app_normal.png) no-repeat;
+	background-size: 100% 100%;
+}
+.section-one .wrapper .appstore:hover{
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/app_hover.png) no-repeat;
+	background-size: 100% 100%;
+}
+.section-one .wrapper .android{
+	left: 20%;
+	top: 69%;
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/android_normal.png) no-repeat;
+	background-size: 100% 100%;
+}
+.section-one .wrapper .android:hover{
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/android_hover.png) no-repeat;
+	background-size: 100% 100%;
+}
+.section-two .wrapper{
+	position: relative;
+}
+.section-two .wrapper .btn,.section-three .wrapper .btn,.section-four .wrapper .btn,.section-five .wrapper .btn{
+	display: block;
+	/*width: 112px;*/
+	height: 8%;
+	text-align: center;
+	position: absolute;
+	left: 42.5%;
+	top: 26.5%;
+	cursor: pointer;
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/tiyan.png) no-repeat;
+	background-size: 100% 100%;
+	
+}
+
+.section-three .wrapper{
+	position: relative;
+}
+.section-four .wrapper{
+	position: relative;
+}
+.section-five .wrapper{
+	position: relative;
+}
+
+/*footer*/
+.footer{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	/*margin-left: -200px;*/
+	z-index: 99;
+	width: 100%;
+	background-color: #f5f5f5;
+}
+.footer p{
+	color:#939598;
+}
+
+/*弹窗部分样式*/
+.mask-view{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	display: none;
+}
+.mask-view .mask-bg{
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+.mask-view .mask-qcode{
+	width: 308px;
+	height: 435px;
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/mask-qcode.png) no-repeat;
+	margin: auto;
+	position: relative;
+	top: 50%;
+	margin-top: -160px;
+	z-index: 9;
+}
+.mask-view .mask-close{
+	background: url(http://7xlkzr.com1.z0.glb.clouddn.com/img/web/mask-view-close.png) no-repeat;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: -30px;
+    right: -10px;
+    cursor: pointer;
+}
+
+/*==========更改jquery.fullpage.css样式=============*/
+#fullPage-nav li .active .first_active{
+	background: #3d3d3d;
+    border: 2px solid #fff;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+#fullPage-nav li .active .notfirst_active{
+	background: #35CBDB;
+    border: 2px solid #fff;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+#fullPage-nav .notfirst_normal{
+	top: 2px;
+    left: 2px;
+    width: 8px;
+    height: 8px;
+    /*border: 1px solid #000;*/
+    background: #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+#fullPage-nav .first_normal{
+	top: 2px;
+    left: 2px;
+    width: 8px;
+    height: 8px;
+    /*border: 1px solid #000;*/
+    background: #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+
+#fullPage-nav li .active span,
+.fullPage-slidesNav .active span {
+    background: #3D3D3D;
+    border: 2px solid #fff;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/*=======================*/

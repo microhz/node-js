@@ -123,5 +123,47 @@ function _user_router(app) {
             throw err;
         }
     })
+    app.get('/class',function(req,res){
+    res.render('class',{});
+   });  
+    app.get('/function',function(req,res){
+    res.render('function',{});
+    });
+    app.get('/computer',function(req,res){
+    res.render('computer',{});
+    });
+    app.get('/mobile',function(req,res){
+    res.render('mobile',{});
+    });
+    app.get('/login',function(req,res){
+    res.render('login',{});
+    });
+    app.get('/register',function(req,res){
+    res.render('register',{});
+    });
+    app.get('/teacher',function(req,res){
+         
+    res.render('teacher',{});
+
+});
+    app.get('/teacher/getSign',function(req,res){
+          try {
+           // TODO　call java
+           var comSer = route_base.getRemoteUrl();
+           var web_token = req.query.web_token;
+           console.log(web_token);
+           var getSignUrl = comSer + "/website/sign/getSign?"; 
+           var getSignPro = http_proxy.get(getSignUrl,{"web_token": web_token},req,res,null);
+           co(function *(){
+               var result = yield getSignPro;
+                return res.json(result);
+           })       
+        } catch (err) {
+            throw err;
+        } 
+         })
+
+        
+    
 }
 module.exports = _user_router;
