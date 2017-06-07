@@ -62,15 +62,16 @@ module.exports = function (app) {
     })
 
 
-    app.post('/demo/login',function(req, res) {
+    app.get('/demo/login',function(req, res) {
         // 获取post参数
         var params = req.body;
         co(function * () {
-            var loginPromise = yield API.post("http://120.26.73.227:8081/api/parent/login", params, req, res);
-            console.log(loginPromise);
-
-            var cookieNeedGet = yield API.get("http://120.26.73.227:8088/api/teacher-invite/share", params, req, res);
+            // var loginPromise = yield API.post("http://120.26.73.227:8081/api/parent/login", params, req, res);
+            // console.log(loginPromise);
+            var params = {userId : 1}
+            var cookieNeedGet = yield API.get("http://120.26.73.227:8081/webiste/parent/detail", params, req, res);
             console.log(cookieNeedGet);
+            res.render('test');
         })
     })
 }

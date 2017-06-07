@@ -34,16 +34,19 @@ function _user_router(app) {
 
     app.get("/index",function(req,res) {
         try {
-            var comSer = conf.java_server.host + ":" + conf.java_server.port;
-            var provinceUrl = comSer + "/website/item/type/1";  //省份
-            var provinceResp = JSON.parse(http_proxy.get(provinceUrl,null,req,res)).data;
-            var gradeUrl = comSer + "/website/item/type/3";     //年级
-            var gradeResp = JSON.parse(http_proxy.get(gradeUrl,null,req,res)).data;
-            var subjectUrl = comSer + "/website/item/type/4";   //科目
-            var subjectResp = JSON.parse(http_proxy.get(subjectUrl,null,req,res)).data; 
-            var coachUrl = comSer + "/website/item/type/26";    //辅导性质
-            var coachResp = JSON.parse(http_proxy.get(coachUrl,null,req,res)).data;
-            res.render('index',{provinceResp:provinceResp,gradeResp:gradeResp,subjectResp:subjectResp,coachResp:coachResp});
+            // co (function* () {
+                // var comSer = conf.java_server.host + ":" + conf.java_server.port;
+                // var provinceUrl = comSer + "/website/item/type/1";  //省份
+                // var provinceResp = JSON.parse(http_proxy.get(provinceUrl,null,req,res)).data;
+                // var gradeUrl = comSer + "/website/item/type/3";     //年级
+                // var gradeResp = JSON.parse(http_proxy.get(gradeUrl,null,req,res)).data;
+                // var subjectUrl = comSer + "/website/item/type/4";   //科目
+                // var subjectResp = JSON.parse(http_proxy.get(subjectUrl,null,req,res)).data; 
+                // var coachUrl = comSer + "/website/item/type/26";    //辅导性质
+                // var coachResp = JSON.parse(http_proxy.get(coachUrl,null,req,res)).data;
+                res.render('index');
+            // })
+            
         } catch (err) {
             throw err;
         }
