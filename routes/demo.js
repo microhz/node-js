@@ -59,4 +59,21 @@ module.exports = function (app) {
     app.get('/test-vue', function(req,res) {
         
     })
+<<<<<<< HEAD
+=======
+
+
+    app.get('/demo/login',function(req, res) {
+        // 获取post参数
+        var params = req.body;
+        co(function * () {
+            // var loginPromise = yield API.post("http://120.26.73.227:8081/api/parent/login", params, req, res);
+            // console.log(loginPromise);
+            var params = {userId : 1}
+            var cookieNeedGet = yield API.get("http://120.26.73.227:8081/webiste/parent/detail", params, req, res);
+            console.log(cookieNeedGet);
+            res.render('test');
+        })
+    })
+>>>>>>> ec8d4c6b64ab10e35c84bfada7ec8db7b580cea8
 }
