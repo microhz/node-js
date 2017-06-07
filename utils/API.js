@@ -6,9 +6,7 @@ var Q = require('q')
 var Promise = require('Promise')
 var cookie = require('cookie')
 var _url = require('url')
-var req = require('request');
-var j = req.jar();
-var request = req.defaults({jar : j});
+var request = require('request');
 var cookie_parse = require('cookie-parser');
 var qs = require('querystring')
 var _ = require('lodash')
@@ -42,12 +40,20 @@ module.exports.get = function (url, params, req, res, options) {
             //     "Content-type" : "application/json",
             //     "Cookie" : cookie_parse.JSONCookies(req.cookies)
             // }
-            headers : [
-                {name : "content-type", value : "application/json"},
-                {name : "Cookie" , value : cookie_parse.JSONCookies(req.cookies)}
-            ]
+            // headers : [
+            //     {name : "content-type", value : "application/json"},
+            //     {name : "cookie" , value : cookie_parse.JSONCookies(req.cookies)}
+            // ],
+            headers : {
+                "content-type" : "application/json",
+                "cookie" : JSON.stringify(req.cookies)
+            },
+            jar : true,
+            cookie : "k=1"
         }
         // 发送请求
+        // request.cookie("k=1");
+        // var request = request.cookie('k=1');
         request(options, callback);
     })
 }
