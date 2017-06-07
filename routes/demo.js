@@ -3,6 +3,8 @@ var http_utils = require('../utils/http_utils')
 var conf = require('../config/api')
 var host = conf.java_server.host;
 var port = conf.java_server.port;
+var co = require('co');
+var API = require('../utils/API')
 module.exports = function (app) {
     // get请求
     app.get('/',function(req,res) {
@@ -59,9 +61,6 @@ module.exports = function (app) {
     app.get('/test-vue', function(req,res) {
         
     })
-<<<<<<< HEAD
-=======
-
 
     app.get('/demo/login',function(req, res) {
         // 获取post参数
@@ -69,11 +68,23 @@ module.exports = function (app) {
         co(function * () {
             // var loginPromise = yield API.post("http://120.26.73.227:8081/api/parent/login", params, req, res);
             // console.log(loginPromise);
-            var params = {userId : 1}
-            var cookieNeedGet = yield API.get("http://120.26.73.227:8081/webiste/parent/detail", params, req, res);
+            // var url = "http://120.26.73.227:8081/api/parent/login";
+            // url = "http://localhost:8080/spring-demo/user/login";
+            var url = "http://120.26.73.227:8081/website//v3/sms/getcode"
+            var params = {mobile : "15023399922"}
+            var cookieNeedGet = yield API.get(url , params, req, res);
             console.log(cookieNeedGet);
             res.render('test');
         })
     })
->>>>>>> ec8d4c6b64ab10e35c84bfada7ec8db7b580cea8
+
+    app.get('/demo/getToken', function (req, res) {
+        // 模拟测试token返回 token
+        var url = "http://120.26.73.227:8081/website/parent/token"
+        co (function*() {
+            yield API.get(url , null, req, res);
+            res.end();
+        })
+        
+    })
 }
